@@ -112,7 +112,10 @@
 			<hd:singleLine pattern="(999) 999-9999"/>
 		</hd:text>
 		<hd:text name="Job Seeker Zip Code TE" maxChars="10"/>
-		<hd:trueFalse name="Education Or Experience TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Experience TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Job Seeker Include Address TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Job Seeker Include Email TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Job Seeker Include Phone TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker MSG Phone TF" yesNoOnSameLine="true"/>
 		<hd:multipleChoice name="Education College End Month MC">
 			<hd:options>
@@ -1237,6 +1240,24 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
+		<hd:computation name="Include Address CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Job Seeker Include Address TF) AND Job Seeker Include Address TF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Email CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Job Seeker Include Email TF) AND Job Seeker Include Email TF AND ANSWERED(Job Seeker Email TE)</hd:script>
+		</hd:computation>
+		<hd:computation name="Include First Bar CO" resultType="trueFalse">
+			<hd:script>Include Address CO AND ( Include Email CO OR Include Phone CO OR Include MSG Phone CO)</hd:script>
+		</hd:computation>
+		<hd:computation name="Include MSG Phone CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Job Seeker MSG Phone TF) AND Job Seeker MSG Phone TF AND ANSWERED(Job Seeker Phone TE)</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Phone CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Job Seeker Include Phone TF) AND Job Seeker Include Phone TF AND ANSWERED(Job Seeker Phone TE)</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Second Bar CO" resultType="trueFalse">
+			<hd:script>Include Email CO AND  (Include Phone CO OR Include MSG Phone CO)</hd:script>
+		</hd:computation>
 		<hd:dialog name="College">
 			<hd:style>
 				<hd:repeated/>
@@ -1301,13 +1322,16 @@
 		<hd:dialog name="Job Seeker">
 			<hd:contents>
 				<hd:item name="Job Seeker Name TE"/>
+				<hd:item name="Job Seeker Include Address TF"/>
 				<hd:item name="Job Seeker Address TE"/>
 				<hd:item name="Job Seeker City TE"/>
-				<hd:item name="Job Seeker State MC"/>
-				<hd:item name="Job Seeker Zip Code TE"/>
+				<hd:item name="Job Seeker State MC" onPreviousLine="true"/>
+				<hd:item name="Job Seeker Zip Code TE" onPreviousLine="true"/>
+				<hd:item name="Job Seeker Include Email TF"/>
 				<hd:item name="Job Seeker Email TE"/>
-				<hd:item name="Job Seeker Phone TE"/>
+				<hd:item name="Job Seeker Include Phone TF"/>
 				<hd:item name="Job Seeker MSG Phone TF"/>
+				<hd:item name="Job Seeker Phone TE"/>
 			</hd:contents>
 		</hd:dialog>
 		<hd:textFormat name="AA Word Word" value="AA Word Word"/>
