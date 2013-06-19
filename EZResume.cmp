@@ -2,7 +2,7 @@
 <hd:componentLibrary xmlns:hd="http://www.hotdocs.com/schemas/component_library/2009" version="10">
 	<hd:preferences>
 		<hd:preference name="COMMON_COMPONENT_FILE"></hd:preference>
-		<hd:preference name="CUSTOM_INTERVIEW"></hd:preference>
+		<hd:preference name="CUSTOM_INTERVIEW">INTERVIEW</hd:preference>
 		<hd:preference name="DEFAULT DLG TITLE"></hd:preference>
 		<hd:preference name="DISABLE_IRRELEVANT_ANSWERS">False</hd:preference>
 		<hd:preference name="ENABLE_EDIT_ANSWER">True</hd:preference>
@@ -26,7 +26,7 @@
 		<hd:preference name="UPDATE_TOC">False</hd:preference>
 		<hd:preference name="USE DEFAULT DLG TITLE ALWAYS">False</hd:preference>
 		<hd:preference name="USE NAMES">False</hd:preference>
-		<hd:preference name="USE_INTERVIEW_COMPUTATION">False</hd:preference>
+		<hd:preference name="USE_INTERVIEW_COMPUTATION">True</hd:preference>
 		<hd:preference name="USE_SHARED_ANSWERUPLOAD_PROPS">True</hd:preference>
 		<hd:preference name="USE_SHARED_ASSEMBLY_PROPS">True</hd:preference>
 		<hd:preference name="USE_SHARED_HIDDENDATA_PROPS">True</hd:preference>
@@ -35,7 +35,6 @@
 		<hd:preference name="WARN_USED_THEN_ASKED">True</hd:preference>
 	</hd:preferences>
 	<hd:components>
-		<hd:text name="College TE"/>
 		<hd:text name="Education College Area of Study TE"/>
 		<hd:text name="Education College City TE">
 			<hd:defFormat>Like This</hd:defFormat>
@@ -91,11 +90,9 @@
 		<hd:text name="Experience Start Year TE" maxChars="4">
 			<hd:singleLine pattern="9999"/>
 		</hd:text>
-		<hd:text name="GED TE"/>
 		<hd:text name="GED Year TE" maxChars="4">
 			<hd:singleLine pattern="9999"/>
 		</hd:text>
-		<hd:text name="High School TE"/>
 		<hd:text name="Job Seeker Address TE">
 			<hd:defFormat>Like This</hd:defFormat>
 		</hd:text>
@@ -112,11 +109,15 @@
 			<hd:singleLine pattern="(999) 999-9999"/>
 		</hd:text>
 		<hd:text name="Job Seeker Zip Code TE" maxChars="10"/>
+		<hd:trueFalse name="College TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Experience TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="GED TF"/>
+		<hd:trueFalse name="High School TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Address TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Email TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Phone TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker MSG Phone TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Present TF" yesNoOnSameLine="true"/>
 		<hd:multipleChoice name="Education College End Month MC">
 			<hd:options>
 				<hd:option name="1">
@@ -1240,14 +1241,156 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
+		<hd:computation name="INTERVIEW" resultType="text">
+			<hd:script>ASK Job Seeker
+ASK Experience
+ASK College
+ASK High School
+</hd:script>
+		</hd:computation>
 		<hd:computation name="Include Address CO" resultType="trueFalse">
 			<hd:script>ANSWERED(Job Seeker Include Address TF) AND Job Seeker Include Address TF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include College Attended Dates Dash CO" resultType="text">
+			<hd:script>IF ANSWERED(Education College End Year TE) AND ANSWERED(Education College Start Year TE) AND (Education College Status MC = &quot;Attended&quot;)
+	&quot; - &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include College CO" resultType="trueFalse">
+			<hd:script>ANSWERED(College TF) AND College TF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include College End Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(Education College Status MC) AND Education College Status MC = &quot;Attended&quot;
+	IF ANSWERED(Education College End Month MC) AND ANSWERED(Education College End Year TE)
+		&quot;&quot; + Education College End Month MC + &quot;/&quot;+ Education College End Year TE
+	ELSE IF ANSWERED(Education College End Year TE)
+		Education College End Year TE
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include College First Bar CO" resultType="text">
+			<hd:script>IF ANSWERED( Education College Status MC ) AND ( Include Degree Area of Study CO != &quot;&quot;)
+	IF Include Education City State CO = &quot;&quot;
+		&quot;| &quot;
+	ELSE
+		&quot; | &quot;
+	END 
+ELSE
+	&quot;&quot;
+END</hd:script>
+		</hd:computation>
+		<hd:computation name="Include College Second Bar CO" resultType="text">
+			<hd:script>IF ANSWERED( Education College Status MC )  AND (Include College Start Month Year CO != &quot;&quot; OR Include College End Month Year CO != &quot;&quot; OR Include Expected Graduation CO != &quot;&quot; OR Include Graduated CO != &quot;&quot;)
+	&quot; | &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include College Start Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(Education College Status MC) AND Education College Status MC = &quot;Attended&quot;
+	IF ANSWERED(Education College Start Month MC) AND ANSWERED(Education College Start Year TE)
+		&quot;&quot; + Education College Start Month MC + &quot;/&quot;+ Education College Start Year TE
+	ELSE IF ANSWERED(Education College Start Year TE)
+		Education College Start Year TE
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Degree Area of Study CO" resultType="text">
+			<hd:script>IF ANSWERED( Education College Status MC ) AND (Education College Status MC  = &quot;Attended&quot; OR Education College Status MC = &quot;Attending&quot;) AND ANSWERED(Education College Area of Study TE)
+	&quot;Area of Study: &quot; + Education College Area of Study TE
+ELSE IF ANSWERED( Education College Status MC ) AND Education College Status MC = &quot;Graduated&quot; AND ANSWERED( Education College Degree TE)
+	Education College Degree TE
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Education City State CO" resultType="text">
+			<hd:script>IF ANSWERED(Education College State MC) AND ANSWERED (Education College City TE)
+	&quot;(&quot; + Education College City TE + &quot;, &quot; + Education College State MC + &quot;)&quot;
+ELSE IF ANSWERED(Education College State MC)
+	&quot;(&quot; + Education College State MC + &quot;)&quot;
+ELSE IF ANSWERED(Education College City TE)
+	&quot;(&quot; + Education College City TE + &quot;)&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="Include Email CO" resultType="trueFalse">
 			<hd:script>ANSWERED(Job Seeker Include Email TF) AND Job Seeker Include Email TF AND ANSWERED(Job Seeker Email TE)</hd:script>
 		</hd:computation>
-		<hd:computation name="Include First Bar CO" resultType="trueFalse">
-			<hd:script>Include Address CO AND ( Include Email CO OR Include Phone CO OR Include MSG Phone CO)</hd:script>
+		<hd:computation name="Include End Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(Present TF) AND Present TF
+	&quot;Present&quot;
+ELSE IF ANSWERED(Experience End Year TE) AND ANSWERED(Experience End Month MC)
+	&quot;&quot; + Experience End Month MC + &quot;/&quot;+ Experience End Year TE
+ELSE IF ANSWERED(Experience End Year TE)
+	Experience End Year TE
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Expected Graduation CO" resultType="text">
+			<hd:script>IF ANSWERED( Education College Status MC ) AND Education College Status MC = &quot;Attending&quot;
+	IF ANSWERED( Education College Expected Graduation Year TE) AND ANSWERED(Education College Expected Graduation Month MC)
+		&quot;Expected Graduation: &quot; + Education College Expected Graduation Month MC + &quot;/&quot; + Education College Expected Graduation Year TE
+	ELSE IF ANSWERED(Education College Expected Graduation Year TE)
+		&quot;Expected Graduation: &quot; + Education College Expected Graduation Year TE
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Experience Dates Dash CO" resultType="text">
+			<hd:script>IF ((ANSWERED(Present TF) AND Present TF) OR ANSWERED(Experience End Year TE)) AND ANSWERED(Experience Start Year TE)
+	&quot; - &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Experience First Bar CO" resultType="text">
+			<hd:script>IF ANSWERED(Experience Position Title TE) AND (ANSWERED(Experience Company TE) OR Include Start Month Year CO != &quot;&quot; OR Include End Month Year CO != &quot;&quot;)
+	&quot; | &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Experience Second Bar CO" resultType="text">
+			<hd:script>IF ANSWERED(Experience Company TE) AND (Include Start Month Year CO != &quot;&quot; OR Include End Month Year CO != &quot;&quot;)
+	&quot; | &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include GED CO" resultType="trueFalse">
+			<hd:script>ANSWERED(GED TF) AND GED TF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Graduated CO" resultType="text">
+			<hd:script>IF ANSWERED( Education College Status MC ) AND Education College Status MC = &quot;Graduated&quot;
+	IF ANSWERED( Education College Graduation Year TE) AND ANSWERED(Education College Graduation Month MC)
+		&quot;Graduated: &quot; + Education College Graduation Month MC + &quot;/&quot; + Education College Graduation Year TE
+	ELSE IF ANSWERED(Education College Graduation Year TE)
+		&quot;Graduated: &quot; + Education College Graduation Year TE
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include High School CO" resultType="trueFalse">
+			<hd:script>ANSWERED(High School TF) AND High School TF</hd:script>
 		</hd:computation>
 		<hd:computation name="Include MSG Phone CO" resultType="trueFalse">
 			<hd:script>ANSWERED(Job Seeker MSG Phone TF) AND Job Seeker MSG Phone TF AND ANSWERED(Job Seeker Phone TE)</hd:script>
@@ -1255,14 +1398,35 @@
 		<hd:computation name="Include Phone CO" resultType="trueFalse">
 			<hd:script>ANSWERED(Job Seeker Include Phone TF) AND Job Seeker Include Phone TF AND ANSWERED(Job Seeker Phone TE)</hd:script>
 		</hd:computation>
-		<hd:computation name="Include Second Bar CO" resultType="trueFalse">
-			<hd:script>Include Email CO AND  (Include Phone CO OR Include MSG Phone CO)</hd:script>
+		<hd:computation name="Include Seeker First Bar CO" resultType="text">
+			<hd:script>IF Include Address CO AND ( Include Email CO OR Include Phone CO OR Include MSG Phone CO)
+&quot; | &quot;
+ELSE
+&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Seeker Second Bar CO" resultType="text">
+			<hd:script>IF Include Email CO AND  (Include Phone CO OR Include MSG Phone CO)
+	&quot; | &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Include Start Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(Experience Start Year TE) AND ANSWERED(Experience Start Month MC)
+	&quot;&quot; + Experience Start Month MC + &quot;/&quot;+ Experience Start Year TE
+ELSE IF ANSWERED(Experience Start Year TE)
+	Experience Start Year TE
+ELSE
+	&quot;&quot;
+END IF</hd:script>
 		</hd:computation>
 		<hd:dialog name="College">
 			<hd:style>
 				<hd:repeated/>
 			</hd:style>
 			<hd:contents>
+				<hd:item name="College TF"/>
 				<hd:item name="Education College Status MC"/>
 				<hd:item name="Education College Name TE"/>
 				<hd:item name="Education College City TE"/>
@@ -1284,12 +1448,14 @@
 				<hd:repeated/>
 			</hd:style>
 			<hd:contents>
+				<hd:item name="Experience TF"/>
 				<hd:item name="Experience Position Title TE"/>
 				<hd:item name="Experience Company TE"/>
 				<hd:item name="Experience Start Month MC"/>
-				<hd:item name="Experience Start Year TE"/>
+				<hd:item name="Experience Start Year TE" onPreviousLine="true"/>
+				<hd:item name="Present TF"/>
 				<hd:item name="Experience End Month MC"/>
-				<hd:item name="Experience End Year TE"/>
+				<hd:item name="Experience End Year TE" onPreviousLine="true"/>
 				<hd:item name="Experience Responsibility"/>
 			</hd:contents>
 		</hd:dialog>
@@ -1303,6 +1469,7 @@
 		</hd:dialog>
 		<hd:dialog name="High School">
 			<hd:contents>
+				<hd:item name="High School TF"/>
 				<hd:item name="Education HS Status MC"/>
 				<hd:item name="Education High School Name TE"/>
 				<hd:item name="Education High School City TE"/>
