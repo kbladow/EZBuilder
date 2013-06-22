@@ -85,6 +85,7 @@
 		<hd:text name="Job Seeker Name TE">
 			<hd:defFormat>LIKE THIS</hd:defFormat>
 		</hd:text>
+		<hd:text name="Job Seeker Other Skills TE"/>
 		<hd:text name="Job Seeker Phone TE" maxChars="10">
 			<hd:singleLine pattern="(999) 999-9999"/>
 		</hd:text>
@@ -104,7 +105,7 @@
 		</hd:text>
 		<hd:trueFalse name="Certifications TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="College TF" yesNoOnSameLine="true"/>
-		<hd:trueFalse name="GED TF"/>
+		<hd:trueFalse name="GED TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="HS TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Address TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Email TF" yesNoOnSameLine="true"/>
@@ -969,7 +970,8 @@
 			</hd:options>
 		</hd:multipleChoice>
 		<hd:multipleChoice name="Job Seeker Skills MC">
-			<hd:options>
+			<hd:defFormat>a</hd:defFormat>
+			<hd:options defMergeText="Time Management/Reliable/Punctual/Organized/Follow">
 				<hd:option name="TM">
 					<hd:prompt>Time Management</hd:prompt>
 				</hd:option>
@@ -986,6 +988,7 @@
 					<hd:prompt>Follow Instructions</hd:prompt>
 				</hd:option>
 			</hd:options>
+			<hd:multipleSelection/>
 		</hd:multipleChoice>
 		<hd:multipleChoice name="Job Seeker State MC">
 			<hd:options>
@@ -1305,7 +1308,6 @@ END IF</hd:script>
 		<hd:computation name="College Include First Bar CO" resultType="text">
 			<hd:script>IF ANSWERED( College Status MC ) AND ANSWERED(College Name TE) AND (College Include Degree Area of Study CO != &quot;&quot; OR College Include Start Month Year CO != &quot;&quot; OR College Include End Month Year CO != &quot;&quot; OR College Include Expected Grad CO != &quot;&quot; OR College Include Grad CO != &quot;&quot;)
 	&quot; | &quot;
-
 	IF College Include City State CO = &quot;&quot;
 		&quot;| &quot;
 	ELSE
@@ -1351,6 +1353,17 @@ END IF</hd:script>
 		<hd:computation name="GED Include CO" resultType="trueFalse">
 			<hd:script>ANSWERED(GED TF) AND GED TF</hd:script>
 		</hd:computation>
+		<hd:computation name="GED Include Year State CO" resultType="text">
+			<hd:script>IF ANSWERED(GED Year TE) AND ANSWERED(GED State MC)
+	&quot; &quot; + GED Year TE + &quot; from &quot; + GED State MC
+ELSE IF ANSWERED(GED Year TE)
+	&quot; &quot; + GED Year TE
+ELSE IF ANSWERED (GED State MC)
+	&quot; from &quot; + GED State MC
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
 		<hd:computation name="HS Include Attended Dates Dash CO" resultType="text">
 			<hd:script>IF ANSWERED(HS End Year TE) AND ANSWERED(HS Start Year TE)
 	&quot; - &quot;
@@ -1387,15 +1400,15 @@ END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="HS Include Expected Grad CO" resultType="text">
 			<hd:script>IF ANSWERED(HS Expected Grad Year TE) AND ANSWERED(HS Expected Grad Month MC)
-	HS Expected Grad Month MC + &quot;/&quot; + HS Expected Grad Year TE
-ELSE IF ANSWERED(College Expected Grad Year TE)
-	HS Expected Grad Year TE
+	&quot;&quot; + HS Expected Grad Month MC + &quot;/&quot; + HS Expected Grad Year TE
+ELSE IF ANSWERED(HS Expected Grad Year TE)
+	&quot;&quot; + HS Expected Grad Year TE
 ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="HS Include First Bar CO" resultType="text">
-			<hd:script>IF ANSWERED( HS Status MC ) AND (ANSWERED(HS End Year TE) OR ANSWERED(HS Expected Grad Year TE) OR ANSWERED(HS Grad Year TE) OR ANSWERED(HS Start Year TE))
+			<hd:script>IF ANSWERED( HS Status MC ) AND ANSWERED(HS Name TE) AND HS Include Years CO != &quot;&quot;
 	IF HS Include City State CO = &quot;&quot;
 		&quot;| &quot;
 	ELSE
@@ -1459,11 +1472,13 @@ END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="INTERVIEW" resultType="text">
 			<hd:script>ASK Job Seeker
+ASK Include
 ASK Work
 ASK College
 ASK GED
 ASK HS
 ASK Certifications
+ASK Skills Include
 ASK Skills
 </hd:script>
 		</hd:computation>
@@ -1545,7 +1560,6 @@ END IF</hd:script>
 				<hd:repeated/>
 			</hd:style>
 			<hd:contents>
-				<hd:item name="Certifications TF"/>
 				<hd:item name="Certifications TE"/>
 			</hd:contents>
 		</hd:dialog>
@@ -1554,7 +1568,6 @@ END IF</hd:script>
 				<hd:repeated/>
 			</hd:style>
 			<hd:contents>
-				<hd:item name="College TF"/>
 				<hd:item name="College Status MC"/>
 				<hd:item name="College Name TE"/>
 				<hd:item name="College City TE"/>
@@ -1573,14 +1586,12 @@ END IF</hd:script>
 		</hd:dialog>
 		<hd:dialog name="GED">
 			<hd:contents>
-				<hd:item name="GED TF"/>
 				<hd:item name="GED State MC"/>
 				<hd:item name="GED Year TE"/>
 			</hd:contents>
 		</hd:dialog>
 		<hd:dialog name="HS">
 			<hd:contents>
-				<hd:item name="HS TF"/>
 				<hd:item name="HS Status MC"/>
 				<hd:item name="HS Name TE"/>
 				<hd:item name="HS City TE"/>
@@ -1593,6 +1604,33 @@ END IF</hd:script>
 				<hd:item name="HS Expected Grad Year TE"/>
 				<hd:item name="HS Grad Month MC"/>
 				<hd:item name="HS Grad Year TE"/>
+			</hd:contents>
+			<hd:script>HIDE ALL
+SHOW HS Name TE
+SHOW HS City TE
+SHOW HS State MC
+SHOW HS Status MC
+IF HS Status MC = &quot;Attended&quot;
+	SHOW HS Start Month MC
+	SHOW HS Start Year TE
+	SHOW HS End Month MC
+	SHOW HS End Year TE
+ELSE IF HS Status MC = &quot;Attending&quot;
+	SHOW HS Expected Grad Month MC
+	SHOW HS Expected Grad Year TE
+ELSE IF HS Status MC = &quot;Graduated&quot;
+	SHOW HS Grad Month MC
+	SHOW HS Grad Year TE
+END IF</hd:script>
+		</hd:dialog>
+		<hd:dialog name="Include">
+			<hd:contents>
+				<hd:item name="Work TF"/>
+				<hd:item name="College TF"/>
+				<hd:item name="GED TF"/>
+				<hd:item name="HS TF"/>
+				<hd:item name="Certifications TF"/>
+				<hd:item name="Skills TF"/>
 			</hd:contents>
 		</hd:dialog>
 		<hd:dialog name="Job Seeker">
@@ -1612,10 +1650,14 @@ END IF</hd:script>
 		</hd:dialog>
 		<hd:dialog name="Skills">
 			<hd:style>
-				<hd:repeated/>
+				<hd:spreadsheet/>
 			</hd:style>
 			<hd:contents>
-				<hd:item name="Skills TF"/>
+				<hd:item name="Job Seeker Other Skills TE"/>
+			</hd:contents>
+		</hd:dialog>
+		<hd:dialog name="Skills Include">
+			<hd:contents>
 				<hd:item name="Job Seeker Skills MC"/>
 			</hd:contents>
 		</hd:dialog>
@@ -1624,7 +1666,6 @@ END IF</hd:script>
 				<hd:repeated/>
 			</hd:style>
 			<hd:contents>
-				<hd:item name="Work TF"/>
 				<hd:item name="Work Position TE"/>
 				<hd:item name="Work Company TE"/>
 				<hd:item name="Work Start Month MC"/>
@@ -1734,6 +1775,13 @@ END IF</hd:script>
 			<hd:choice></hd:choice>
 			<hd:choice></hd:choice>
 		</hd:multipleChoiceFormat>
+		<hd:multipleChoiceFormat name="Time Management/Reliable/Punctual/Organized/Follow">
+			<hd:choice>Time Management«.pm»</hd:choice>
+			<hd:choice>Reliable«.pm»</hd:choice>
+			<hd:choice>Punctual«.pm»</hd:choice>
+			<hd:choice>Organized«.pm»</hd:choice>
+			<hd:choice>Follow Instructions«.pm»</hd:choice>
+		</hd:multipleChoiceFormat>
 		<hd:multipleChoiceFormat name="he/she">
 			<hd:choice>he</hd:choice>
 			<hd:choice>she</hd:choice>
@@ -1773,6 +1821,7 @@ END IF</hd:script>
 		<hd:listFormat name="A, B AND C" value="A, B AND C"/>
 		<hd:listFormat name="A, B and C" value="A, B and C"/>
 		<hd:listFormat name="A, b and c" value="A, b and c"/>
+		<hd:listFormat name="a" value="a"/>
 		<hd:listFormat name="a, and b" value="a, and b"/>
 		<hd:listFormat name="a, b" value="a, b"/>
 		<hd:listFormat name="a, b and c" value="a, b and c"/>
