@@ -35,62 +35,42 @@
 		<hd:preference name="WARN_USED_THEN_ASKED">True</hd:preference>
 	</hd:preferences>
 	<hd:components>
-		<hd:text name="Education College Area of Study TE"/>
-		<hd:text name="Education College City TE">
+		<hd:text name="Certifications TE"/>
+		<hd:text name="College Area of Study TE"/>
+		<hd:text name="College City TE">
 			<hd:defFormat>Like This</hd:defFormat>
 		</hd:text>
-		<hd:text name="Education College Degree TE"/>
-		<hd:text name="Education College End Year TE" maxChars="4">
+		<hd:text name="College Degree TE"/>
+		<hd:text name="College End Year TE" maxChars="4">
 			<hd:singleLine pattern="9999"/>
 		</hd:text>
-		<hd:text name="Education College Expected Graduation Year TE" maxChars="4">
+		<hd:text name="College Expected Grad Year TE" maxChars="4">
 			<hd:singleLine pattern="9999"/>
 		</hd:text>
-		<hd:text name="Education College Graduation Year TE" maxChars="4">
+		<hd:text name="College Grad Year TE" maxChars="4">
 			<hd:singleLine pattern="9999"/>
 		</hd:text>
-		<hd:text name="Education College Name TE">
-			<hd:defFormat>Like This</hd:defFormat>
-		</hd:text>
-		<hd:text name="Education College Start Year TE" maxChars="4">
-			<hd:singleLine pattern="9999"/>
-		</hd:text>
-		<hd:text name="Education HS End Year TE" maxChars="4">
-			<hd:singleLine pattern="9999"/>
-		</hd:text>
-		<hd:text name="Education HS Expected Graduation Year TE" maxChars="4">
-			<hd:singleLine pattern="9999"/>
-		</hd:text>
-		<hd:text name="Education HS Graduation Year TE" maxChars="4">
-			<hd:singleLine pattern="9999"/>
-		</hd:text>
-		<hd:text name="Education HS Start Year TE" maxChars="4">
-			<hd:singleLine pattern="9999"/>
-		</hd:text>
-		<hd:text name="Education High School City TE">
-			<hd:defFormat>Like This</hd:defFormat>
-		</hd:text>
-		<hd:text name="Education High School Name TE">
-			<hd:defFormat>Like This</hd:defFormat>
-		</hd:text>
-		<hd:text name="Education Or Experience TE"/>
-		<hd:text name="Experience Company TE">
-			<hd:defFormat>Like This</hd:defFormat>
-		</hd:text>
-		<hd:text name="Experience End Year TE" maxChars="4">
-			<hd:singleLine pattern="9999"/>
-		</hd:text>
-		<hd:text name="Experience Position Title TE">
-			<hd:defFormat>Like This</hd:defFormat>
-		</hd:text>
-		<hd:text name="Experience Responsibility 1 TE"/>
-		<hd:text name="Experience Responsibility 2 TE"/>
-		<hd:text name="Experience Responsibility 3 TE"/>
-		<hd:text name="Experience Responsibility TE"/>
-		<hd:text name="Experience Start Year TE" maxChars="4">
+		<hd:text name="College Name TE"/>
+		<hd:text name="College Start Year TE" maxChars="4">
 			<hd:singleLine pattern="9999"/>
 		</hd:text>
 		<hd:text name="GED Year TE" maxChars="4">
+			<hd:singleLine pattern="9999"/>
+		</hd:text>
+		<hd:text name="HS City TE">
+			<hd:defFormat>Like This</hd:defFormat>
+		</hd:text>
+		<hd:text name="HS End Year TE" maxChars="4">
+			<hd:singleLine pattern="9999"/>
+		</hd:text>
+		<hd:text name="HS Expected Grad Year TE" maxChars="4">
+			<hd:singleLine pattern="9999"/>
+		</hd:text>
+		<hd:text name="HS Grad Year TE" maxChars="4">
+			<hd:singleLine pattern="9999"/>
+		</hd:text>
+		<hd:text name="HS Name TE"/>
+		<hd:text name="HS Start Year TE" maxChars="4">
 			<hd:singleLine pattern="9999"/>
 		</hd:text>
 		<hd:text name="Job Seeker Address TE">
@@ -109,16 +89,31 @@
 			<hd:singleLine pattern="(999) 999-9999"/>
 		</hd:text>
 		<hd:text name="Job Seeker Zip Code TE" maxChars="10"/>
+		<hd:text name="Work Company TE">
+			<hd:defFormat>Like This</hd:defFormat>
+		</hd:text>
+		<hd:text name="Work End Year TE" maxChars="4">
+			<hd:singleLine pattern="9999"/>
+		</hd:text>
+		<hd:text name="Work Position TE">
+			<hd:defFormat>Like This</hd:defFormat>
+		</hd:text>
+		<hd:text name="Work Responsibility TE"/>
+		<hd:text name="Work Start Year TE" maxChars="4">
+			<hd:singleLine pattern="9999"/>
+		</hd:text>
+		<hd:trueFalse name="Certifications TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="College TF" yesNoOnSameLine="true"/>
-		<hd:trueFalse name="Experience TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="GED TF"/>
-		<hd:trueFalse name="High School TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="HS TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Address TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Email TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Phone TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker MSG Phone TF" yesNoOnSameLine="true"/>
-		<hd:trueFalse name="Present TF" yesNoOnSameLine="true"/>
-		<hd:multipleChoice name="Education College End Month MC">
+		<hd:trueFalse name="Skills TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Work Present TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Work TF" yesNoOnSameLine="true"/>
+		<hd:multipleChoice name="College End Month MC">
 			<hd:options>
 				<hd:option name="1">
 					<hd:prompt>January</hd:prompt>
@@ -159,7 +154,7 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
-		<hd:multipleChoice name="Education College Expected Graduation Month MC">
+		<hd:multipleChoice name="College Expected Grad Month MC">
 			<hd:options>
 				<hd:option name="1">
 					<hd:prompt>January</hd:prompt>
@@ -200,7 +195,7 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
-		<hd:multipleChoice name="Education College Graduation Month MC">
+		<hd:multipleChoice name="College Grad Month MC">
 			<hd:options>
 				<hd:option name="1">
 					<hd:prompt>January</hd:prompt>
@@ -241,7 +236,7 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
-		<hd:multipleChoice name="Education College Start Month MC">
+		<hd:multipleChoice name="College Start Month MC">
 			<hd:options>
 				<hd:option name="1">
 					<hd:prompt>January</hd:prompt>
@@ -282,7 +277,7 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
-		<hd:multipleChoice name="Education College State MC">
+		<hd:multipleChoice name="College State MC">
 			<hd:options>
 				<hd:option name="AL">
 					<hd:prompt>Alabama</hd:prompt>
@@ -449,7 +444,7 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
-		<hd:multipleChoice name="Education College Status MC">
+		<hd:multipleChoice name="College Status MC">
 			<hd:options>
 				<hd:option name="Attended">
 					<hd:prompt>Attended Did Not Graduated</hd:prompt>
@@ -461,432 +456,6 @@
 					<hd:prompt>Graduated</hd:prompt>
 				</hd:option>
 			</hd:options>
-		</hd:multipleChoice>
-		<hd:multipleChoice name="Education HS End Month MC">
-			<hd:options>
-				<hd:option name="1">
-					<hd:prompt>January</hd:prompt>
-				</hd:option>
-				<hd:option name="2">
-					<hd:prompt>February</hd:prompt>
-				</hd:option>
-				<hd:option name="3">
-					<hd:prompt>March</hd:prompt>
-				</hd:option>
-				<hd:option name="4">
-					<hd:prompt>April</hd:prompt>
-				</hd:option>
-				<hd:option name="5">
-					<hd:prompt>May</hd:prompt>
-				</hd:option>
-				<hd:option name="6">
-					<hd:prompt>June</hd:prompt>
-				</hd:option>
-				<hd:option name="7">
-					<hd:prompt>July</hd:prompt>
-				</hd:option>
-				<hd:option name="8">
-					<hd:prompt>August</hd:prompt>
-				</hd:option>
-				<hd:option name="9">
-					<hd:prompt>September</hd:prompt>
-				</hd:option>
-				<hd:option name="10">
-					<hd:prompt>October</hd:prompt>
-				</hd:option>
-				<hd:option name="11">
-					<hd:prompt>November</hd:prompt>
-				</hd:option>
-				<hd:option name="12">
-					<hd:prompt>December</hd:prompt>
-				</hd:option>
-			</hd:options>
-			<hd:singleSelection style="dropDownList"/>
-		</hd:multipleChoice>
-		<hd:multipleChoice name="Education HS Expected Graduation Month MC">
-			<hd:options>
-				<hd:option name="1">
-					<hd:prompt>January</hd:prompt>
-				</hd:option>
-				<hd:option name="2">
-					<hd:prompt>February</hd:prompt>
-				</hd:option>
-				<hd:option name="3">
-					<hd:prompt>March</hd:prompt>
-				</hd:option>
-				<hd:option name="4">
-					<hd:prompt>April</hd:prompt>
-				</hd:option>
-				<hd:option name="5">
-					<hd:prompt>May</hd:prompt>
-				</hd:option>
-				<hd:option name="6">
-					<hd:prompt>June</hd:prompt>
-				</hd:option>
-				<hd:option name="7">
-					<hd:prompt>July</hd:prompt>
-				</hd:option>
-				<hd:option name="8">
-					<hd:prompt>August</hd:prompt>
-				</hd:option>
-				<hd:option name="9">
-					<hd:prompt>September</hd:prompt>
-				</hd:option>
-				<hd:option name="10">
-					<hd:prompt>October</hd:prompt>
-				</hd:option>
-				<hd:option name="11">
-					<hd:prompt>November</hd:prompt>
-				</hd:option>
-				<hd:option name="12">
-					<hd:prompt>December</hd:prompt>
-				</hd:option>
-			</hd:options>
-			<hd:singleSelection style="dropDownList"/>
-		</hd:multipleChoice>
-		<hd:multipleChoice name="Education HS Graduation Month MC">
-			<hd:options>
-				<hd:option name="1">
-					<hd:prompt>January</hd:prompt>
-				</hd:option>
-				<hd:option name="2">
-					<hd:prompt>February</hd:prompt>
-				</hd:option>
-				<hd:option name="3">
-					<hd:prompt>March</hd:prompt>
-				</hd:option>
-				<hd:option name="4">
-					<hd:prompt>April</hd:prompt>
-				</hd:option>
-				<hd:option name="5">
-					<hd:prompt>May</hd:prompt>
-				</hd:option>
-				<hd:option name="6">
-					<hd:prompt>June</hd:prompt>
-				</hd:option>
-				<hd:option name="7">
-					<hd:prompt>July</hd:prompt>
-				</hd:option>
-				<hd:option name="8">
-					<hd:prompt>August</hd:prompt>
-				</hd:option>
-				<hd:option name="9">
-					<hd:prompt>September</hd:prompt>
-				</hd:option>
-				<hd:option name="10">
-					<hd:prompt>October</hd:prompt>
-				</hd:option>
-				<hd:option name="11">
-					<hd:prompt>November</hd:prompt>
-				</hd:option>
-				<hd:option name="12">
-					<hd:prompt>December</hd:prompt>
-				</hd:option>
-			</hd:options>
-			<hd:singleSelection style="dropDownList"/>
-		</hd:multipleChoice>
-		<hd:multipleChoice name="Education HS Start Month MC">
-			<hd:options>
-				<hd:option name="1">
-					<hd:prompt>January</hd:prompt>
-				</hd:option>
-				<hd:option name="2">
-					<hd:prompt>February</hd:prompt>
-				</hd:option>
-				<hd:option name="3">
-					<hd:prompt>March</hd:prompt>
-				</hd:option>
-				<hd:option name="4">
-					<hd:prompt>April</hd:prompt>
-				</hd:option>
-				<hd:option name="5">
-					<hd:prompt>May</hd:prompt>
-				</hd:option>
-				<hd:option name="6">
-					<hd:prompt>June</hd:prompt>
-				</hd:option>
-				<hd:option name="7">
-					<hd:prompt>July</hd:prompt>
-				</hd:option>
-				<hd:option name="8">
-					<hd:prompt>August</hd:prompt>
-				</hd:option>
-				<hd:option name="9">
-					<hd:prompt>September</hd:prompt>
-				</hd:option>
-				<hd:option name="10">
-					<hd:prompt>October</hd:prompt>
-				</hd:option>
-				<hd:option name="11">
-					<hd:prompt>November</hd:prompt>
-				</hd:option>
-				<hd:option name="12">
-					<hd:prompt>December</hd:prompt>
-				</hd:option>
-			</hd:options>
-			<hd:singleSelection style="dropDownList"/>
-		</hd:multipleChoice>
-		<hd:multipleChoice name="Education HS State MC">
-			<hd:options>
-				<hd:option name="AL">
-					<hd:prompt>Alabama</hd:prompt>
-				</hd:option>
-				<hd:option name="AK">
-					<hd:prompt>Alaska</hd:prompt>
-				</hd:option>
-				<hd:option name="AZ">
-					<hd:prompt>Arizona</hd:prompt>
-				</hd:option>
-				<hd:option name="AR">
-					<hd:prompt>Arkansas</hd:prompt>
-				</hd:option>
-				<hd:option name="CA">
-					<hd:prompt>California</hd:prompt>
-				</hd:option>
-				<hd:option name="CO">
-					<hd:prompt>Colorado</hd:prompt>
-				</hd:option>
-				<hd:option name="CT">
-					<hd:prompt>Connecticut</hd:prompt>
-				</hd:option>
-				<hd:option name="DE">
-					<hd:prompt>Delaware</hd:prompt>
-				</hd:option>
-				<hd:option name="DC">
-					<hd:prompt>District of Columbia</hd:prompt>
-				</hd:option>
-				<hd:option name="FL">
-					<hd:prompt>Florida</hd:prompt>
-				</hd:option>
-				<hd:option name="GA">
-					<hd:prompt>Georgia</hd:prompt>
-				</hd:option>
-				<hd:option name="GU">
-					<hd:prompt>Guam</hd:prompt>
-				</hd:option>
-				<hd:option name="HI">
-					<hd:prompt>Hawaii</hd:prompt>
-				</hd:option>
-				<hd:option name="ID">
-					<hd:prompt>Idaho</hd:prompt>
-				</hd:option>
-				<hd:option name="IL">
-					<hd:prompt>Illinois</hd:prompt>
-				</hd:option>
-				<hd:option name="IN">
-					<hd:prompt>Indiana</hd:prompt>
-				</hd:option>
-				<hd:option name="IA">
-					<hd:prompt>Iowa</hd:prompt>
-				</hd:option>
-				<hd:option name="KS">
-					<hd:prompt>Kansas</hd:prompt>
-				</hd:option>
-				<hd:option name="KY">
-					<hd:prompt>Kentucky</hd:prompt>
-				</hd:option>
-				<hd:option name="LA">
-					<hd:prompt>Louisiana</hd:prompt>
-				</hd:option>
-				<hd:option name="ME">
-					<hd:prompt>Maine</hd:prompt>
-				</hd:option>
-				<hd:option name="MD">
-					<hd:prompt>Maryland</hd:prompt>
-				</hd:option>
-				<hd:option name="MA">
-					<hd:prompt>Massachusetts</hd:prompt>
-				</hd:option>
-				<hd:option name="MI">
-					<hd:prompt>Michigan</hd:prompt>
-				</hd:option>
-				<hd:option name="MN">
-					<hd:prompt>Minnesota</hd:prompt>
-				</hd:option>
-				<hd:option name="MS">
-					<hd:prompt>Mississippi</hd:prompt>
-				</hd:option>
-				<hd:option name="MO">
-					<hd:prompt>Missouri</hd:prompt>
-				</hd:option>
-				<hd:option name="MT">
-					<hd:prompt>Montana</hd:prompt>
-				</hd:option>
-				<hd:option name="NE">
-					<hd:prompt>Nebraska</hd:prompt>
-				</hd:option>
-				<hd:option name="NV">
-					<hd:prompt>Nevada</hd:prompt>
-				</hd:option>
-				<hd:option name="NH">
-					<hd:prompt>New Hampshire</hd:prompt>
-				</hd:option>
-				<hd:option name="NJ">
-					<hd:prompt>New Jersey</hd:prompt>
-				</hd:option>
-				<hd:option name="NM">
-					<hd:prompt>New Mexico</hd:prompt>
-				</hd:option>
-				<hd:option name="NY">
-					<hd:prompt>New York</hd:prompt>
-				</hd:option>
-				<hd:option name="NC">
-					<hd:prompt>North Carolina</hd:prompt>
-				</hd:option>
-				<hd:option name="ND">
-					<hd:prompt>North Dakota</hd:prompt>
-				</hd:option>
-				<hd:option name="OH">
-					<hd:prompt>Ohio</hd:prompt>
-				</hd:option>
-				<hd:option name="OK">
-					<hd:prompt>Oklahoma</hd:prompt>
-				</hd:option>
-				<hd:option name="OR">
-					<hd:prompt>Oregon</hd:prompt>
-				</hd:option>
-				<hd:option name="PA">
-					<hd:prompt>Pennsylvania</hd:prompt>
-				</hd:option>
-				<hd:option name="PR">
-					<hd:prompt>Puerto Rico</hd:prompt>
-				</hd:option>
-				<hd:option name="RI">
-					<hd:prompt>Rhode Island</hd:prompt>
-				</hd:option>
-				<hd:option name="SC">
-					<hd:prompt>South Carolina</hd:prompt>
-				</hd:option>
-				<hd:option name="SD">
-					<hd:prompt>South Dakota</hd:prompt>
-				</hd:option>
-				<hd:option name="TN">
-					<hd:prompt>Tennessee</hd:prompt>
-				</hd:option>
-				<hd:option name="TX">
-					<hd:prompt>Texas</hd:prompt>
-				</hd:option>
-				<hd:option name="UT">
-					<hd:prompt>Utah</hd:prompt>
-				</hd:option>
-				<hd:option name="VT">
-					<hd:prompt>Vermont</hd:prompt>
-				</hd:option>
-				<hd:option name="VI">
-					<hd:prompt>Virgin Island</hd:prompt>
-				</hd:option>
-				<hd:option name="VA">
-					<hd:prompt>Virginia</hd:prompt>
-				</hd:option>
-				<hd:option name="WA">
-					<hd:prompt>Washington</hd:prompt>
-				</hd:option>
-				<hd:option name="WV">
-					<hd:prompt>West Virginia</hd:prompt>
-				</hd:option>
-				<hd:option name="WI">
-					<hd:prompt>Wisconsin</hd:prompt>
-				</hd:option>
-				<hd:option name="WY">
-					<hd:prompt>Wyoming</hd:prompt>
-				</hd:option>
-			</hd:options>
-			<hd:singleSelection style="dropDownList"/>
-		</hd:multipleChoice>
-		<hd:multipleChoice name="Education HS Status MC">
-			<hd:options>
-				<hd:option name="Attended">
-					<hd:prompt>Attended, Did Not Graduate</hd:prompt>
-				</hd:option>
-				<hd:option name="Attending">
-					<hd:prompt>Still Attending</hd:prompt>
-				</hd:option>
-				<hd:option name="Graduated">
-					<hd:prompt>Graduated</hd:prompt>
-				</hd:option>
-			</hd:options>
-		</hd:multipleChoice>
-		<hd:multipleChoice name="Experience End Month MC">
-			<hd:options>
-				<hd:option name="1">
-					<hd:prompt>January</hd:prompt>
-				</hd:option>
-				<hd:option name="2">
-					<hd:prompt>February</hd:prompt>
-				</hd:option>
-				<hd:option name="3">
-					<hd:prompt>March</hd:prompt>
-				</hd:option>
-				<hd:option name="4">
-					<hd:prompt>April</hd:prompt>
-				</hd:option>
-				<hd:option name="5">
-					<hd:prompt>May</hd:prompt>
-				</hd:option>
-				<hd:option name="6">
-					<hd:prompt>June</hd:prompt>
-				</hd:option>
-				<hd:option name="7">
-					<hd:prompt>July</hd:prompt>
-				</hd:option>
-				<hd:option name="8">
-					<hd:prompt>August</hd:prompt>
-				</hd:option>
-				<hd:option name="9">
-					<hd:prompt>September</hd:prompt>
-				</hd:option>
-				<hd:option name="10">
-					<hd:prompt>October</hd:prompt>
-				</hd:option>
-				<hd:option name="11">
-					<hd:prompt>November</hd:prompt>
-				</hd:option>
-				<hd:option name="12">
-					<hd:prompt>December</hd:prompt>
-				</hd:option>
-			</hd:options>
-			<hd:singleSelection style="dropDownList"/>
-		</hd:multipleChoice>
-		<hd:multipleChoice name="Experience Start Month MC">
-			<hd:options>
-				<hd:option name="1">
-					<hd:prompt>January</hd:prompt>
-				</hd:option>
-				<hd:option name="2">
-					<hd:prompt>February</hd:prompt>
-				</hd:option>
-				<hd:option name="3">
-					<hd:prompt>March</hd:prompt>
-				</hd:option>
-				<hd:option name="4">
-					<hd:prompt>April</hd:prompt>
-				</hd:option>
-				<hd:option name="5">
-					<hd:prompt>May</hd:prompt>
-				</hd:option>
-				<hd:option name="6">
-					<hd:prompt>June</hd:prompt>
-				</hd:option>
-				<hd:option name="7">
-					<hd:prompt>July</hd:prompt>
-				</hd:option>
-				<hd:option name="8">
-					<hd:prompt>August</hd:prompt>
-				</hd:option>
-				<hd:option name="9">
-					<hd:prompt>September</hd:prompt>
-				</hd:option>
-				<hd:option name="10">
-					<hd:prompt>October</hd:prompt>
-				</hd:option>
-				<hd:option name="11">
-					<hd:prompt>November</hd:prompt>
-				</hd:option>
-				<hd:option name="12">
-					<hd:prompt>December</hd:prompt>
-				</hd:option>
-			</hd:options>
-			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
 		<hd:multipleChoice name="GED State MC">
 			<hd:options>
@@ -1054,6 +623,350 @@
 				</hd:option>
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
+		</hd:multipleChoice>
+		<hd:multipleChoice name="HS End Month MC">
+			<hd:options>
+				<hd:option name="1">
+					<hd:prompt>January</hd:prompt>
+				</hd:option>
+				<hd:option name="2">
+					<hd:prompt>February</hd:prompt>
+				</hd:option>
+				<hd:option name="3">
+					<hd:prompt>March</hd:prompt>
+				</hd:option>
+				<hd:option name="4">
+					<hd:prompt>April</hd:prompt>
+				</hd:option>
+				<hd:option name="5">
+					<hd:prompt>May</hd:prompt>
+				</hd:option>
+				<hd:option name="6">
+					<hd:prompt>June</hd:prompt>
+				</hd:option>
+				<hd:option name="7">
+					<hd:prompt>July</hd:prompt>
+				</hd:option>
+				<hd:option name="8">
+					<hd:prompt>August</hd:prompt>
+				</hd:option>
+				<hd:option name="9">
+					<hd:prompt>September</hd:prompt>
+				</hd:option>
+				<hd:option name="10">
+					<hd:prompt>October</hd:prompt>
+				</hd:option>
+				<hd:option name="11">
+					<hd:prompt>November</hd:prompt>
+				</hd:option>
+				<hd:option name="12">
+					<hd:prompt>December</hd:prompt>
+				</hd:option>
+			</hd:options>
+			<hd:singleSelection style="dropDownList"/>
+		</hd:multipleChoice>
+		<hd:multipleChoice name="HS Expected Grad Month MC">
+			<hd:options>
+				<hd:option name="1">
+					<hd:prompt>January</hd:prompt>
+				</hd:option>
+				<hd:option name="2">
+					<hd:prompt>February</hd:prompt>
+				</hd:option>
+				<hd:option name="3">
+					<hd:prompt>March</hd:prompt>
+				</hd:option>
+				<hd:option name="4">
+					<hd:prompt>April</hd:prompt>
+				</hd:option>
+				<hd:option name="5">
+					<hd:prompt>May</hd:prompt>
+				</hd:option>
+				<hd:option name="6">
+					<hd:prompt>June</hd:prompt>
+				</hd:option>
+				<hd:option name="7">
+					<hd:prompt>July</hd:prompt>
+				</hd:option>
+				<hd:option name="8">
+					<hd:prompt>August</hd:prompt>
+				</hd:option>
+				<hd:option name="9">
+					<hd:prompt>September</hd:prompt>
+				</hd:option>
+				<hd:option name="10">
+					<hd:prompt>October</hd:prompt>
+				</hd:option>
+				<hd:option name="11">
+					<hd:prompt>November</hd:prompt>
+				</hd:option>
+				<hd:option name="12">
+					<hd:prompt>December</hd:prompt>
+				</hd:option>
+			</hd:options>
+			<hd:singleSelection style="dropDownList"/>
+		</hd:multipleChoice>
+		<hd:multipleChoice name="HS Grad Month MC">
+			<hd:options>
+				<hd:option name="1">
+					<hd:prompt>January</hd:prompt>
+				</hd:option>
+				<hd:option name="2">
+					<hd:prompt>February</hd:prompt>
+				</hd:option>
+				<hd:option name="3">
+					<hd:prompt>March</hd:prompt>
+				</hd:option>
+				<hd:option name="4">
+					<hd:prompt>April</hd:prompt>
+				</hd:option>
+				<hd:option name="5">
+					<hd:prompt>May</hd:prompt>
+				</hd:option>
+				<hd:option name="6">
+					<hd:prompt>June</hd:prompt>
+				</hd:option>
+				<hd:option name="7">
+					<hd:prompt>July</hd:prompt>
+				</hd:option>
+				<hd:option name="8">
+					<hd:prompt>August</hd:prompt>
+				</hd:option>
+				<hd:option name="9">
+					<hd:prompt>September</hd:prompt>
+				</hd:option>
+				<hd:option name="10">
+					<hd:prompt>October</hd:prompt>
+				</hd:option>
+				<hd:option name="11">
+					<hd:prompt>November</hd:prompt>
+				</hd:option>
+				<hd:option name="12">
+					<hd:prompt>December</hd:prompt>
+				</hd:option>
+			</hd:options>
+			<hd:singleSelection style="dropDownList"/>
+		</hd:multipleChoice>
+		<hd:multipleChoice name="HS Start Month MC">
+			<hd:options>
+				<hd:option name="1">
+					<hd:prompt>January</hd:prompt>
+				</hd:option>
+				<hd:option name="2">
+					<hd:prompt>February</hd:prompt>
+				</hd:option>
+				<hd:option name="3">
+					<hd:prompt>March</hd:prompt>
+				</hd:option>
+				<hd:option name="4">
+					<hd:prompt>April</hd:prompt>
+				</hd:option>
+				<hd:option name="5">
+					<hd:prompt>May</hd:prompt>
+				</hd:option>
+				<hd:option name="6">
+					<hd:prompt>June</hd:prompt>
+				</hd:option>
+				<hd:option name="7">
+					<hd:prompt>July</hd:prompt>
+				</hd:option>
+				<hd:option name="8">
+					<hd:prompt>August</hd:prompt>
+				</hd:option>
+				<hd:option name="9">
+					<hd:prompt>September</hd:prompt>
+				</hd:option>
+				<hd:option name="10">
+					<hd:prompt>October</hd:prompt>
+				</hd:option>
+				<hd:option name="11">
+					<hd:prompt>November</hd:prompt>
+				</hd:option>
+				<hd:option name="12">
+					<hd:prompt>December</hd:prompt>
+				</hd:option>
+			</hd:options>
+			<hd:singleSelection style="dropDownList"/>
+		</hd:multipleChoice>
+		<hd:multipleChoice name="HS State MC">
+			<hd:options>
+				<hd:option name="AL">
+					<hd:prompt>Alabama</hd:prompt>
+				</hd:option>
+				<hd:option name="AK">
+					<hd:prompt>Alaska</hd:prompt>
+				</hd:option>
+				<hd:option name="AZ">
+					<hd:prompt>Arizona</hd:prompt>
+				</hd:option>
+				<hd:option name="AR">
+					<hd:prompt>Arkansas</hd:prompt>
+				</hd:option>
+				<hd:option name="CA">
+					<hd:prompt>California</hd:prompt>
+				</hd:option>
+				<hd:option name="CO">
+					<hd:prompt>Colorado</hd:prompt>
+				</hd:option>
+				<hd:option name="CT">
+					<hd:prompt>Connecticut</hd:prompt>
+				</hd:option>
+				<hd:option name="DE">
+					<hd:prompt>Delaware</hd:prompt>
+				</hd:option>
+				<hd:option name="DC">
+					<hd:prompt>District of Columbia</hd:prompt>
+				</hd:option>
+				<hd:option name="FL">
+					<hd:prompt>Florida</hd:prompt>
+				</hd:option>
+				<hd:option name="GA">
+					<hd:prompt>Georgia</hd:prompt>
+				</hd:option>
+				<hd:option name="GU">
+					<hd:prompt>Guam</hd:prompt>
+				</hd:option>
+				<hd:option name="HI">
+					<hd:prompt>Hawaii</hd:prompt>
+				</hd:option>
+				<hd:option name="ID">
+					<hd:prompt>Idaho</hd:prompt>
+				</hd:option>
+				<hd:option name="IL">
+					<hd:prompt>Illinois</hd:prompt>
+				</hd:option>
+				<hd:option name="IN">
+					<hd:prompt>Indiana</hd:prompt>
+				</hd:option>
+				<hd:option name="IA">
+					<hd:prompt>Iowa</hd:prompt>
+				</hd:option>
+				<hd:option name="KS">
+					<hd:prompt>Kansas</hd:prompt>
+				</hd:option>
+				<hd:option name="KY">
+					<hd:prompt>Kentucky</hd:prompt>
+				</hd:option>
+				<hd:option name="LA">
+					<hd:prompt>Louisiana</hd:prompt>
+				</hd:option>
+				<hd:option name="ME">
+					<hd:prompt>Maine</hd:prompt>
+				</hd:option>
+				<hd:option name="MD">
+					<hd:prompt>Maryland</hd:prompt>
+				</hd:option>
+				<hd:option name="MA">
+					<hd:prompt>Massachusetts</hd:prompt>
+				</hd:option>
+				<hd:option name="MI">
+					<hd:prompt>Michigan</hd:prompt>
+				</hd:option>
+				<hd:option name="MN">
+					<hd:prompt>Minnesota</hd:prompt>
+				</hd:option>
+				<hd:option name="MS">
+					<hd:prompt>Mississippi</hd:prompt>
+				</hd:option>
+				<hd:option name="MO">
+					<hd:prompt>Missouri</hd:prompt>
+				</hd:option>
+				<hd:option name="MT">
+					<hd:prompt>Montana</hd:prompt>
+				</hd:option>
+				<hd:option name="NE">
+					<hd:prompt>Nebraska</hd:prompt>
+				</hd:option>
+				<hd:option name="NV">
+					<hd:prompt>Nevada</hd:prompt>
+				</hd:option>
+				<hd:option name="NH">
+					<hd:prompt>New Hampshire</hd:prompt>
+				</hd:option>
+				<hd:option name="NJ">
+					<hd:prompt>New Jersey</hd:prompt>
+				</hd:option>
+				<hd:option name="NM">
+					<hd:prompt>New Mexico</hd:prompt>
+				</hd:option>
+				<hd:option name="NY">
+					<hd:prompt>New York</hd:prompt>
+				</hd:option>
+				<hd:option name="NC">
+					<hd:prompt>North Carolina</hd:prompt>
+				</hd:option>
+				<hd:option name="ND">
+					<hd:prompt>North Dakota</hd:prompt>
+				</hd:option>
+				<hd:option name="OH">
+					<hd:prompt>Ohio</hd:prompt>
+				</hd:option>
+				<hd:option name="OK">
+					<hd:prompt>Oklahoma</hd:prompt>
+				</hd:option>
+				<hd:option name="OR">
+					<hd:prompt>Oregon</hd:prompt>
+				</hd:option>
+				<hd:option name="PA">
+					<hd:prompt>Pennsylvania</hd:prompt>
+				</hd:option>
+				<hd:option name="PR">
+					<hd:prompt>Puerto Rico</hd:prompt>
+				</hd:option>
+				<hd:option name="RI">
+					<hd:prompt>Rhode Island</hd:prompt>
+				</hd:option>
+				<hd:option name="SC">
+					<hd:prompt>South Carolina</hd:prompt>
+				</hd:option>
+				<hd:option name="SD">
+					<hd:prompt>South Dakota</hd:prompt>
+				</hd:option>
+				<hd:option name="TN">
+					<hd:prompt>Tennessee</hd:prompt>
+				</hd:option>
+				<hd:option name="TX">
+					<hd:prompt>Texas</hd:prompt>
+				</hd:option>
+				<hd:option name="UT">
+					<hd:prompt>Utah</hd:prompt>
+				</hd:option>
+				<hd:option name="VT">
+					<hd:prompt>Vermont</hd:prompt>
+				</hd:option>
+				<hd:option name="VI">
+					<hd:prompt>Virgin Island</hd:prompt>
+				</hd:option>
+				<hd:option name="VA">
+					<hd:prompt>Virginia</hd:prompt>
+				</hd:option>
+				<hd:option name="WA">
+					<hd:prompt>Washington</hd:prompt>
+				</hd:option>
+				<hd:option name="WV">
+					<hd:prompt>West Virginia</hd:prompt>
+				</hd:option>
+				<hd:option name="WI">
+					<hd:prompt>Wisconsin</hd:prompt>
+				</hd:option>
+				<hd:option name="WY">
+					<hd:prompt>Wyoming</hd:prompt>
+				</hd:option>
+			</hd:options>
+			<hd:singleSelection style="dropDownList"/>
+		</hd:multipleChoice>
+		<hd:multipleChoice name="HS Status MC">
+			<hd:options>
+				<hd:option name="Attended">
+					<hd:prompt>Attended, Did Not Graduate</hd:prompt>
+				</hd:option>
+				<hd:option name="Attending">
+					<hd:prompt>Still Attending</hd:prompt>
+				</hd:option>
+				<hd:option name="Graduated">
+					<hd:prompt>Graduated</hd:prompt>
+				</hd:option>
+			</hd:options>
 		</hd:multipleChoice>
 		<hd:multipleChoice name="Job Seeker Skills MC">
 			<hd:options>
@@ -1241,32 +1154,134 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
-		<hd:computation name="INTERVIEW" resultType="text">
-			<hd:script>ASK Job Seeker
-ASK Experience
-ASK College
-ASK High School
-</hd:script>
+		<hd:multipleChoice name="Work End Month MC">
+			<hd:options>
+				<hd:option name="1">
+					<hd:prompt>January</hd:prompt>
+				</hd:option>
+				<hd:option name="2">
+					<hd:prompt>February</hd:prompt>
+				</hd:option>
+				<hd:option name="3">
+					<hd:prompt>March</hd:prompt>
+				</hd:option>
+				<hd:option name="4">
+					<hd:prompt>April</hd:prompt>
+				</hd:option>
+				<hd:option name="5">
+					<hd:prompt>May</hd:prompt>
+				</hd:option>
+				<hd:option name="6">
+					<hd:prompt>June</hd:prompt>
+				</hd:option>
+				<hd:option name="7">
+					<hd:prompt>July</hd:prompt>
+				</hd:option>
+				<hd:option name="8">
+					<hd:prompt>August</hd:prompt>
+				</hd:option>
+				<hd:option name="9">
+					<hd:prompt>September</hd:prompt>
+				</hd:option>
+				<hd:option name="10">
+					<hd:prompt>October</hd:prompt>
+				</hd:option>
+				<hd:option name="11">
+					<hd:prompt>November</hd:prompt>
+				</hd:option>
+				<hd:option name="12">
+					<hd:prompt>December</hd:prompt>
+				</hd:option>
+			</hd:options>
+			<hd:singleSelection style="dropDownList"/>
+		</hd:multipleChoice>
+		<hd:multipleChoice name="Work Start Month MC">
+			<hd:options>
+				<hd:option name="1">
+					<hd:prompt>January</hd:prompt>
+				</hd:option>
+				<hd:option name="2">
+					<hd:prompt>February</hd:prompt>
+				</hd:option>
+				<hd:option name="3">
+					<hd:prompt>March</hd:prompt>
+				</hd:option>
+				<hd:option name="4">
+					<hd:prompt>April</hd:prompt>
+				</hd:option>
+				<hd:option name="5">
+					<hd:prompt>May</hd:prompt>
+				</hd:option>
+				<hd:option name="6">
+					<hd:prompt>June</hd:prompt>
+				</hd:option>
+				<hd:option name="7">
+					<hd:prompt>July</hd:prompt>
+				</hd:option>
+				<hd:option name="8">
+					<hd:prompt>August</hd:prompt>
+				</hd:option>
+				<hd:option name="9">
+					<hd:prompt>September</hd:prompt>
+				</hd:option>
+				<hd:option name="10">
+					<hd:prompt>October</hd:prompt>
+				</hd:option>
+				<hd:option name="11">
+					<hd:prompt>November</hd:prompt>
+				</hd:option>
+				<hd:option name="12">
+					<hd:prompt>December</hd:prompt>
+				</hd:option>
+			</hd:options>
+			<hd:singleSelection style="dropDownList"/>
+		</hd:multipleChoice>
+		<hd:computation name="Certifications Include CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Certifications TF) AND Certifications TF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include Address CO" resultType="trueFalse">
-			<hd:script>ANSWERED(Job Seeker Include Address TF) AND Job Seeker Include Address TF</hd:script>
+		<hd:computation name="College Include Attended CO" resultType="text">
+			<hd:script>IF (ANSWERED(College End Year TE) OR  ANSWERED(College Start Year TE)) AND (College Status MC = &quot;Attended&quot;)
+	&quot;Attended: &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include College Attended Dates Dash CO" resultType="text">
-			<hd:script>IF ANSWERED(Education College End Year TE) AND ANSWERED(Education College Start Year TE) AND (Education College Status MC = &quot;Attended&quot;)
+		<hd:computation name="College Include Attended Dates Dash CO" resultType="text">
+			<hd:script>IF ANSWERED(College End Year TE) AND ANSWERED(College Start Year TE) AND (College Status MC = &quot;Attended&quot;)
 	&quot; - &quot;
 ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include College CO" resultType="trueFalse">
+		<hd:computation name="College Include CO" resultType="trueFalse">
 			<hd:script>ANSWERED(College TF) AND College TF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include College End Month Year CO" resultType="text">
-			<hd:script>IF ANSWERED(Education College Status MC) AND Education College Status MC = &quot;Attended&quot;
-	IF ANSWERED(Education College End Month MC) AND ANSWERED(Education College End Year TE)
-		&quot;&quot; + Education College End Month MC + &quot;/&quot;+ Education College End Year TE
-	ELSE IF ANSWERED(Education College End Year TE)
-		Education College End Year TE
+		<hd:computation name="College Include City State CO" resultType="text">
+			<hd:script>IF ANSWERED(College State MC) AND ANSWERED (College City TE)
+	&quot;(&quot; + College City TE + &quot;, &quot; + College State MC + &quot;)&quot;
+ELSE IF ANSWERED(College State MC)
+	&quot;(&quot; + College State MC + &quot;)&quot;
+ELSE IF ANSWERED(College City TE)
+	&quot;(&quot; + College City TE + &quot;)&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="College Include Degree Area of Study CO" resultType="text">
+			<hd:script>IF ANSWERED( College Status MC ) AND (College Status MC  = &quot;Attended&quot; OR College Status MC = &quot;Attending&quot;) AND ANSWERED(College Area of Study TE)
+	&quot;Area of Study: &quot; + College Area of Study TE
+ELSE IF ANSWERED( College Status MC ) AND College Status MC = &quot;Graduated&quot; AND ANSWERED( College Degree TE)
+	College Degree TE
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="College Include End Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(College Status MC) AND College Status MC = &quot;Attended&quot;
+	IF ANSWERED(College End Month MC) AND ANSWERED(College End Year TE)
+		&quot;&quot; + College End Month MC + &quot;/&quot;+ College End Year TE
+	ELSE IF ANSWERED(College End Year TE)
+		College End Year TE
 	ELSE
 		&quot;&quot;
 	END IF
@@ -1274,9 +1289,24 @@ ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include College First Bar CO" resultType="text">
-			<hd:script>IF ANSWERED( Education College Status MC ) AND ( Include Degree Area of Study CO != &quot;&quot;)
-	IF Include Education City State CO = &quot;&quot;
+		<hd:computation name="College Include Expected Grad CO" resultType="text">
+			<hd:script>IF ANSWERED( College Status MC ) AND College Status MC = &quot;Attending&quot;
+	IF ANSWERED( College Expected Grad Year TE) AND ANSWERED(College Expected Grad Month MC)
+		&quot;Expected Graduation: &quot; + College Expected Grad Month MC + &quot;/&quot; + College Expected Grad Year TE
+	ELSE IF ANSWERED(College Expected Grad Year TE)
+		&quot;Expected Graduation: &quot; + College Expected Grad Year TE
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="College Include First Bar CO" resultType="text">
+			<hd:script>IF ANSWERED( College Status MC ) AND ANSWERED(College Name TE) AND (College Include Degree Area of Study CO != &quot;&quot; OR College Include Start Month Year CO != &quot;&quot; OR College Include End Month Year CO != &quot;&quot; OR College Include Expected Grad CO != &quot;&quot; OR College Include Grad CO != &quot;&quot;)
+	&quot; | &quot;
+
+	IF College Include City State CO = &quot;&quot;
 		&quot;| &quot;
 	ELSE
 		&quot; | &quot;
@@ -1285,19 +1315,32 @@ ELSE
 	&quot;&quot;
 END</hd:script>
 		</hd:computation>
-		<hd:computation name="Include College Second Bar CO" resultType="text">
-			<hd:script>IF ANSWERED( Education College Status MC )  AND (Include College Start Month Year CO != &quot;&quot; OR Include College End Month Year CO != &quot;&quot; OR Include Expected Graduation CO != &quot;&quot; OR Include Graduated CO != &quot;&quot;)
+		<hd:computation name="College Include Grad CO" resultType="text">
+			<hd:script>IF ANSWERED( College Status MC ) AND College Status MC = &quot;Graduated&quot;
+	IF ANSWERED( College Grad Year TE) AND ANSWERED(College Grad Month MC)
+		&quot;Graduated: &quot; + College Grad Month MC + &quot;/&quot; + College Grad Year TE
+	ELSE IF ANSWERED(College Grad Year TE)
+		&quot;Graduated: &quot; + College Grad Year TE
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="College Include Second Bar CO" resultType="text">
+			<hd:script>IF ANSWERED( College Status MC ) AND College Include Degree Area of Study CO != &quot;&quot; AND (College Include Start Month Year CO != &quot;&quot; OR College Include End Month Year CO != &quot;&quot; OR College Include Expected Grad CO != &quot;&quot; OR College Include Grad CO != &quot;&quot;)
 	&quot; | &quot;
 ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include College Start Month Year CO" resultType="text">
-			<hd:script>IF ANSWERED(Education College Status MC) AND Education College Status MC = &quot;Attended&quot;
-	IF ANSWERED(Education College Start Month MC) AND ANSWERED(Education College Start Year TE)
-		&quot;&quot; + Education College Start Month MC + &quot;/&quot;+ Education College Start Year TE
-	ELSE IF ANSWERED(Education College Start Year TE)
-		Education College Start Year TE
+		<hd:computation name="College Include Start Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(College Status MC) AND College Status MC = &quot;Attended&quot;
+	IF ANSWERED(College Start Month MC) AND ANSWERED(College Start Year TE)
+		&quot;&quot; + College Start Month MC + &quot;/&quot;+ College Start Year TE
+	ELSE IF ANSWERED(College Start Year TE)
+		College Start Year TE
 	ELSE
 		&quot;&quot;
 	END IF
@@ -1305,83 +1348,36 @@ ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include Degree Area of Study CO" resultType="text">
-			<hd:script>IF ANSWERED( Education College Status MC ) AND (Education College Status MC  = &quot;Attended&quot; OR Education College Status MC = &quot;Attending&quot;) AND ANSWERED(Education College Area of Study TE)
-	&quot;Area of Study: &quot; + Education College Area of Study TE
-ELSE IF ANSWERED( Education College Status MC ) AND Education College Status MC = &quot;Graduated&quot; AND ANSWERED( Education College Degree TE)
-	Education College Degree TE
-ELSE
-	&quot;&quot;
-END IF</hd:script>
+		<hd:computation name="GED Include CO" resultType="trueFalse">
+			<hd:script>ANSWERED(GED TF) AND GED TF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include Education City State CO" resultType="text">
-			<hd:script>IF ANSWERED(Education College State MC) AND ANSWERED (Education College City TE)
-	&quot;(&quot; + Education College City TE + &quot;, &quot; + Education College State MC + &quot;)&quot;
-ELSE IF ANSWERED(Education College State MC)
-	&quot;(&quot; + Education College State MC + &quot;)&quot;
-ELSE IF ANSWERED(Education College City TE)
-	&quot;(&quot; + Education College City TE + &quot;)&quot;
-ELSE
-	&quot;&quot;
-END IF</hd:script>
-		</hd:computation>
-		<hd:computation name="Include Email CO" resultType="trueFalse">
-			<hd:script>ANSWERED(Job Seeker Include Email TF) AND Job Seeker Include Email TF AND ANSWERED(Job Seeker Email TE)</hd:script>
-		</hd:computation>
-		<hd:computation name="Include End Month Year CO" resultType="text">
-			<hd:script>IF ANSWERED(Present TF) AND Present TF
-	&quot;Present&quot;
-ELSE IF ANSWERED(Experience End Year TE) AND ANSWERED(Experience End Month MC)
-	&quot;&quot; + Experience End Month MC + &quot;/&quot;+ Experience End Year TE
-ELSE IF ANSWERED(Experience End Year TE)
-	Experience End Year TE
-ELSE
-	&quot;&quot;
-END IF</hd:script>
-		</hd:computation>
-		<hd:computation name="Include Expected Graduation CO" resultType="text">
-			<hd:script>IF ANSWERED( Education College Status MC ) AND Education College Status MC = &quot;Attending&quot;
-	IF ANSWERED( Education College Expected Graduation Year TE) AND ANSWERED(Education College Expected Graduation Month MC)
-		&quot;Expected Graduation: &quot; + Education College Expected Graduation Month MC + &quot;/&quot; + Education College Expected Graduation Year TE
-	ELSE IF ANSWERED(Education College Expected Graduation Year TE)
-		&quot;Expected Graduation: &quot; + Education College Expected Graduation Year TE
-	ELSE
-		&quot;&quot;
-	END IF
-ELSE
-	&quot;&quot;
-END IF</hd:script>
-		</hd:computation>
-		<hd:computation name="Include Experience Dates Dash CO" resultType="text">
-			<hd:script>IF ((ANSWERED(Present TF) AND Present TF) OR ANSWERED(Experience End Year TE)) AND ANSWERED(Experience Start Year TE)
+		<hd:computation name="HS Include Attended Dates Dash CO" resultType="text">
+			<hd:script>IF ANSWERED(HS End Year TE) AND ANSWERED(HS Start Year TE)
 	&quot; - &quot;
 ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include Experience First Bar CO" resultType="text">
-			<hd:script>IF ANSWERED(Experience Position Title TE) AND (ANSWERED(Experience Company TE) OR Include Start Month Year CO != &quot;&quot; OR Include End Month Year CO != &quot;&quot;)
-	&quot; | &quot;
+		<hd:computation name="HS Include CO" resultType="trueFalse">
+			<hd:script>ANSWERED(HS TF) AND HS TF</hd:script>
+		</hd:computation>
+		<hd:computation name="HS Include City State CO" resultType="text">
+			<hd:script>IF ANSWERED(HS State MC) AND ANSWERED (HS City TE)
+	&quot;(&quot; + HS City TE + &quot;, &quot; + HS State MC + &quot;)&quot;
+ELSE IF ANSWERED(HS State MC)
+	&quot;(&quot; + HS State MC + &quot;)&quot;
+ELSE IF ANSWERED(HS City TE)
+	&quot;(&quot; + HS City TE + &quot;)&quot;
 ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include Experience Second Bar CO" resultType="text">
-			<hd:script>IF ANSWERED(Experience Company TE) AND (Include Start Month Year CO != &quot;&quot; OR Include End Month Year CO != &quot;&quot;)
-	&quot; | &quot;
-ELSE
-	&quot;&quot;
-END IF</hd:script>
-		</hd:computation>
-		<hd:computation name="Include GED CO" resultType="trueFalse">
-			<hd:script>ANSWERED(GED TF) AND GED TF</hd:script>
-		</hd:computation>
-		<hd:computation name="Include Graduated CO" resultType="text">
-			<hd:script>IF ANSWERED( Education College Status MC ) AND Education College Status MC = &quot;Graduated&quot;
-	IF ANSWERED( Education College Graduation Year TE) AND ANSWERED(Education College Graduation Month MC)
-		&quot;Graduated: &quot; + Education College Graduation Month MC + &quot;/&quot; + Education College Graduation Year TE
-	ELSE IF ANSWERED(Education College Graduation Year TE)
-		&quot;Graduated: &quot; + Education College Graduation Year TE
+		<hd:computation name="HS Include End Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(HS Status MC) AND HS Status MC = &quot;Attended&quot;
+	IF ANSWERED(HS End Month MC) AND ANSWERED(HS End Year TE)
+		&quot;&quot; + HS End Month MC + &quot;/&quot;+ HS End Year TE
+	ELSE IF ANSWERED(HS End Year TE)
+		HS End Year TE
 	ELSE
 		&quot;&quot;
 	END IF
@@ -1389,101 +1385,214 @@ ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include High School CO" resultType="trueFalse">
-			<hd:script>ANSWERED(High School TF) AND High School TF</hd:script>
-		</hd:computation>
-		<hd:computation name="Include MSG Phone CO" resultType="trueFalse">
-			<hd:script>ANSWERED(Job Seeker MSG Phone TF) AND Job Seeker MSG Phone TF AND ANSWERED(Job Seeker Phone TE)</hd:script>
-		</hd:computation>
-		<hd:computation name="Include Phone CO" resultType="trueFalse">
-			<hd:script>ANSWERED(Job Seeker Include Phone TF) AND Job Seeker Include Phone TF AND ANSWERED(Job Seeker Phone TE)</hd:script>
-		</hd:computation>
-		<hd:computation name="Include Seeker First Bar CO" resultType="text">
-			<hd:script>IF Include Address CO AND ( Include Email CO OR Include Phone CO OR Include MSG Phone CO)
-&quot; | &quot;
+		<hd:computation name="HS Include Expected Grad CO" resultType="text">
+			<hd:script>IF ANSWERED(HS Expected Grad Year TE) AND ANSWERED(HS Expected Grad Month MC)
+	HS Expected Grad Month MC + &quot;/&quot; + HS Expected Grad Year TE
+ELSE IF ANSWERED(College Expected Grad Year TE)
+	HS Expected Grad Year TE
 ELSE
-&quot;&quot;
+	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include Seeker Second Bar CO" resultType="text">
-			<hd:script>IF Include Email CO AND  (Include Phone CO OR Include MSG Phone CO)
+		<hd:computation name="HS Include First Bar CO" resultType="text">
+			<hd:script>IF ANSWERED( HS Status MC ) AND (ANSWERED(HS End Year TE) OR ANSWERED(HS Expected Grad Year TE) OR ANSWERED(HS Grad Year TE) OR ANSWERED(HS Start Year TE))
+	IF HS Include City State CO = &quot;&quot;
+		&quot;| &quot;
+	ELSE
+		&quot; | &quot;
+	END 
+ELSE
+	&quot;&quot;
+END</hd:script>
+		</hd:computation>
+		<hd:computation name="HS Include Grad CO" resultType="text">
+			<hd:script>IF ANSWERED( HS Grad Year TE) AND ANSWERED(HS Grad Month MC)
+	HS Grad Month MC + &quot;/&quot; + HS Grad Year TE
+ELSE IF ANSWERED(HS Grad Year TE)
+	HS Grad Year TE
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="HS Include Second Bar CO" resultType="text">
+			<hd:script>IF ANSWERED( College Status MC )  AND (College Include Start Month Year CO != &quot;&quot; OR College Include End Month Year CO != &quot;&quot; OR College Include Expected Grad CO != &quot;&quot; OR College Include Grad CO != &quot;&quot;)
 	&quot; | &quot;
 ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
-		<hd:computation name="Include Start Month Year CO" resultType="text">
-			<hd:script>IF ANSWERED(Experience Start Year TE) AND ANSWERED(Experience Start Month MC)
-	&quot;&quot; + Experience Start Month MC + &quot;/&quot;+ Experience Start Year TE
-ELSE IF ANSWERED(Experience Start Year TE)
-	Experience Start Year TE
+		<hd:computation name="HS Include Start Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(HS Status MC) AND HS Status MC = &quot;Attended&quot;
+	IF ANSWERED(HS Start Month MC) AND ANSWERED(HS Start Year TE)
+		&quot;&quot; + HS Start Month MC + &quot;/&quot;+ HS Start Year TE
+	ELSE IF ANSWERED(HS Start Year TE)
+		HS Start Year TE
+	ELSE
+		&quot;&quot;
+	END IF
 ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
+		<hd:computation name="HS Include Years CO" resultType="text">
+			<hd:script>IF ANSWERED(HS Status MC) AND HS Status MC = &quot;Attended&quot;
+	IF HS Include Start Month Year CO + HS Include Attended Dates Dash CO + HS Include End Month Year CO != &quot;&quot;
+		&quot;Attended: &quot; + HS Include Start Month Year CO + HS Include Attended Dates Dash CO + HS Include End Month Year CO
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE IF ANSWERED(HS Status MC) AND HS Status MC = &quot;Attending&quot;
+	IF HS Include Expected Grad CO != &quot;&quot;
+		&quot;Expected Graduation: &quot; + HS Include Expected Grad CO
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE IF ANSWERED(HS Status MC) AND HS Status MC = &quot;Graduated&quot;
+	IF HS Include Grad CO != &quot;&quot;
+		&quot;Graduated: &quot; + HS Include Grad CO
+	ELSE
+		&quot;&quot;
+	END IF
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="INTERVIEW" resultType="text">
+			<hd:script>ASK Job Seeker
+ASK Work
+ASK College
+ASK GED
+ASK HS
+ASK Certifications
+ASK Skills
+</hd:script>
+		</hd:computation>
+		<hd:computation name="Job Seeker Include Address CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Job Seeker Include Address TF) AND Job Seeker Include Address TF</hd:script>
+		</hd:computation>
+		<hd:computation name="Job Seeker Include Email CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Job Seeker Include Email TF) AND Job Seeker Include Email TF AND ANSWERED(Job Seeker Email TE)</hd:script>
+		</hd:computation>
+		<hd:computation name="Job Seeker Include First Bar CO" resultType="text">
+			<hd:script>IF Job Seeker Include Address CO AND ( Job Seeker Include Email CO OR Job Seeker Include Phone CO OR Job Seeker Include MSG Phone CO)
+&quot; | &quot;
+ELSE
+&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Job Seeker Include MSG Phone CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Job Seeker MSG Phone TF) AND Job Seeker MSG Phone TF AND ANSWERED(Job Seeker Phone TE)</hd:script>
+		</hd:computation>
+		<hd:computation name="Job Seeker Include Phone CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Job Seeker Include Phone TF) AND Job Seeker Include Phone TF AND ANSWERED(Job Seeker Phone TE)</hd:script>
+		</hd:computation>
+		<hd:computation name="Job Seeker Include Second Bar CO" resultType="text">
+			<hd:script>IF Job Seeker Include Email CO AND  (Job Seeker Include Phone CO OR Job Seeker Include MSG Phone CO)
+	&quot; | &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Skills Include CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Skills TF) AND Skills TF</hd:script>
+		</hd:computation>
+		<hd:computation name="Work Include CO" resultType="trueFalse">
+			<hd:script>ANSWERED(Work TF) AND Work TF</hd:script>
+		</hd:computation>
+		<hd:computation name="Work Include Dates Dash CO" resultType="text">
+			<hd:script>IF ((ANSWERED(Work Present TF) AND Work Present TF) OR ANSWERED(Work End Year TE)) AND ANSWERED(Work Start Year TE)
+	&quot; - &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Work Include End Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(Work Present TF) AND Work Present TF
+	&quot;Present&quot;
+ELSE IF ANSWERED(Work End Year TE) AND ANSWERED(Work End Month MC)
+	&quot;&quot; + Work End Month MC + &quot;/&quot;+ Work End Year TE
+ELSE IF ANSWERED(Work End Year TE)
+	Work End Year TE
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Work Include First Bar CO" resultType="text">
+			<hd:script>IF ANSWERED(Work Position TE) AND (ANSWERED(Work Company TE) OR Work Include Start Month Year CO != &quot;&quot; OR Work Include End Month Year CO != &quot;&quot;)
+	&quot; | &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Work Include Second Bar CO" resultType="text">
+			<hd:script>IF ANSWERED(Work Company TE) AND (Work Include Start Month Year CO != &quot;&quot; OR Work Include End Month Year CO != &quot;&quot;)
+	&quot; | &quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Work Include Start Month Year CO" resultType="text">
+			<hd:script>IF ANSWERED(Work Start Year TE) AND ANSWERED(Work Start Month MC)
+	&quot;&quot; + Work Start Month MC + &quot;/&quot;+ Work Start Year TE
+ELSE IF ANSWERED(Work Start Year TE)
+	Work Start Year TE
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:dialog name="Certifications">
+			<hd:style>
+				<hd:repeated/>
+			</hd:style>
+			<hd:contents>
+				<hd:item name="Certifications TF"/>
+				<hd:item name="Certifications TE"/>
+			</hd:contents>
+		</hd:dialog>
 		<hd:dialog name="College">
 			<hd:style>
 				<hd:repeated/>
 			</hd:style>
 			<hd:contents>
 				<hd:item name="College TF"/>
-				<hd:item name="Education College Status MC"/>
-				<hd:item name="Education College Name TE"/>
-				<hd:item name="Education College City TE"/>
-				<hd:item name="Education College State MC"/>
-				<hd:item name="Education College Degree TE"/>
-				<hd:item name="Education College Area of Study TE"/>
-				<hd:item name="Education College Expected Graduation Month MC"/>
-				<hd:item name="Education College Expected Graduation Year TE"/>
-				<hd:item name="Education College Graduation Month MC"/>
-				<hd:item name="Education College Graduation Year TE"/>
-				<hd:item name="Education College Start Month MC"/>
-				<hd:item name="Education College Start Year TE"/>
-				<hd:item name="Education College End Month MC"/>
-				<hd:item name="Education College End Year TE"/>
+				<hd:item name="College Status MC"/>
+				<hd:item name="College Name TE"/>
+				<hd:item name="College City TE"/>
+				<hd:item name="College State MC"/>
+				<hd:item name="College Degree TE"/>
+				<hd:item name="College Area of Study TE"/>
+				<hd:item name="College Expected Grad Month MC"/>
+				<hd:item name="College Expected Grad Year TE"/>
+				<hd:item name="College Grad Month MC"/>
+				<hd:item name="College Grad Year TE"/>
+				<hd:item name="College Start Month MC"/>
+				<hd:item name="College Start Year TE"/>
+				<hd:item name="College End Month MC"/>
+				<hd:item name="College End Year TE"/>
 			</hd:contents>
 		</hd:dialog>
-		<hd:dialog name="Experience">
-			<hd:style>
-				<hd:repeated/>
-			</hd:style>
+		<hd:dialog name="GED">
 			<hd:contents>
-				<hd:item name="Experience TF"/>
-				<hd:item name="Experience Position Title TE"/>
-				<hd:item name="Experience Company TE"/>
-				<hd:item name="Experience Start Month MC"/>
-				<hd:item name="Experience Start Year TE" onPreviousLine="true"/>
-				<hd:item name="Present TF"/>
-				<hd:item name="Experience End Month MC"/>
-				<hd:item name="Experience End Year TE" onPreviousLine="true"/>
-				<hd:item name="Experience Responsibility"/>
-			</hd:contents>
-		</hd:dialog>
-		<hd:dialog name="Experience Responsibility">
-			<hd:style>
-				<hd:spreadsheetOnParent/>
-			</hd:style>
-			<hd:contents>
-				<hd:item name="Experience Responsibility TE"/>
-			</hd:contents>
-		</hd:dialog>
-		<hd:dialog name="High School">
-			<hd:contents>
-				<hd:item name="High School TF"/>
-				<hd:item name="Education HS Status MC"/>
-				<hd:item name="Education High School Name TE"/>
-				<hd:item name="Education High School City TE"/>
-				<hd:item name="Education HS State MC"/>
-				<hd:item name="Education HS Start Month MC"/>
-				<hd:item name="Education HS Start Year TE"/>
-				<hd:item name="Education HS End Month MC"/>
-				<hd:item name="Education HS End Year TE"/>
-				<hd:item name="Education HS Expected Graduation Month MC"/>
-				<hd:item name="Education HS Expected Graduation Year TE"/>
-				<hd:item name="Education HS Graduation Month MC"/>
-				<hd:item name="Education HS Graduation Year TE"/>
+				<hd:item name="GED TF"/>
 				<hd:item name="GED State MC"/>
 				<hd:item name="GED Year TE"/>
+			</hd:contents>
+		</hd:dialog>
+		<hd:dialog name="HS">
+			<hd:contents>
+				<hd:item name="HS TF"/>
+				<hd:item name="HS Status MC"/>
+				<hd:item name="HS Name TE"/>
+				<hd:item name="HS City TE"/>
+				<hd:item name="HS State MC"/>
+				<hd:item name="HS Start Month MC"/>
+				<hd:item name="HS Start Year TE"/>
+				<hd:item name="HS End Month MC"/>
+				<hd:item name="HS End Year TE"/>
+				<hd:item name="HS Expected Grad Month MC"/>
+				<hd:item name="HS Expected Grad Year TE"/>
+				<hd:item name="HS Grad Month MC"/>
+				<hd:item name="HS Grad Year TE"/>
 			</hd:contents>
 		</hd:dialog>
 		<hd:dialog name="Job Seeker">
@@ -1499,6 +1608,39 @@ END IF</hd:script>
 				<hd:item name="Job Seeker Include Phone TF"/>
 				<hd:item name="Job Seeker MSG Phone TF"/>
 				<hd:item name="Job Seeker Phone TE"/>
+			</hd:contents>
+		</hd:dialog>
+		<hd:dialog name="Skills">
+			<hd:style>
+				<hd:repeated/>
+			</hd:style>
+			<hd:contents>
+				<hd:item name="Skills TF"/>
+				<hd:item name="Job Seeker Skills MC"/>
+			</hd:contents>
+		</hd:dialog>
+		<hd:dialog name="Work">
+			<hd:style>
+				<hd:repeated/>
+			</hd:style>
+			<hd:contents>
+				<hd:item name="Work TF"/>
+				<hd:item name="Work Position TE"/>
+				<hd:item name="Work Company TE"/>
+				<hd:item name="Work Start Month MC"/>
+				<hd:item name="Work Start Year TE" onPreviousLine="true"/>
+				<hd:item name="Work Present TF"/>
+				<hd:item name="Work End Month MC"/>
+				<hd:item name="Work End Year TE" onPreviousLine="true"/>
+				<hd:item name="Work Responsibility"/>
+			</hd:contents>
+		</hd:dialog>
+		<hd:dialog name="Work Responsibility">
+			<hd:style>
+				<hd:spreadsheetOnParent/>
+			</hd:style>
+			<hd:contents>
+				<hd:item name="Work Responsibility TE"/>
 			</hd:contents>
 		</hd:dialog>
 		<hd:textFormat name="AA Word Word" value="AA Word Word"/>
