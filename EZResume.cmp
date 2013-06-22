@@ -103,6 +103,13 @@
 		<hd:text name="Work Start Year TE" maxChars="4">
 			<hd:singleLine pattern="9999"/>
 		</hd:text>
+		<hd:number name="Array size NU"/>
+		<hd:number name="ExpIndex NU"/>
+		<hd:number name="ICap NU"/>
+		<hd:number name="JobCtr NU"/>
+		<hd:number name="OutsideCount"/>
+		<hd:number name="ResponsibilityCtr NU"/>
+		<hd:trueFalse name="A2J repeat trigger TF"/>
 		<hd:trueFalse name="Certifications TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="College TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="GED TF" yesNoOnSameLine="true"/>
@@ -1349,6 +1356,23 @@ END IF</hd:script>
 ELSE
 	&quot;&quot;
 END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Employment data CO" resultType="text">
+			<hd:script>SET JobCtr NU TO 1 
+SET ResponsibilityCtr NU  TO 1 
+SET ExpIndex NU TO ( JobCtr NU * Array size NU) + 1
+
+WHILE JobCtr NU  &lt;= OutsideCount
+	WHILE ResponsibilityCtr NU &lt;= ICap NU[JobCtr NU]
+		SET Work Responsibility TE[JobCtr NU, ResponsibilityCtr NU] TO Work Responsibility TE[ExpIndex NU]
+		INCREMENT ExpIndex NU
+		INCREMENT ResponsibilityCtr NU
+	END WHILE
+	INCREMENT JobCtr NU
+	SET ResponsibilityCtr NU TO 1
+	SET ExpIndex NU TO (JobCtr NU * Array size NU) +1
+END WHILE 
+&quot;&quot;</hd:script>
 		</hd:computation>
 		<hd:computation name="GED Include CO" resultType="trueFalse">
 			<hd:script>ANSWERED(GED TF) AND GED TF</hd:script>
