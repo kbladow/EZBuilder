@@ -33,8 +33,10 @@
 		<hd:preference name="USE_SHARED_INTERVIEW_PROPS">True</hd:preference>
 		<hd:preference name="USE_SHARED_SERVER_PROPS">True</hd:preference>
 		<hd:preference name="WARN_USED_THEN_ASKED">True</hd:preference>
+		<hd:preference name="WATCH_VARIABLES">OutsideCount,ResponsibilityCtr NU,Work Company TE,Work End Month MC,Work End Year TE,Work Include CO,Work Include Dates Dash CO,Work Include End Month Year CO,Work Include First Bar CO,Work Include Second Bar CO,Work Include Start Month Year CO,Work Position TE,Work Present TF,Work Responsibility TE,Work Start Month MC,Work Start Year TE,Work TF,JobCtr NU,ICap NU,ExpIndex NU</hd:preference>
 	</hd:preferences>
 	<hd:components>
+		<hd:text name="A2J Work Responsibility TE"/>
 		<hd:text name="Certifications TE"/>
 		<hd:text name="College Area of Study TE"/>
 		<hd:text name="College City TE">
@@ -1363,11 +1365,13 @@ SET ResponsibilityCtr NU  TO 1
 SET ExpIndex NU TO ( JobCtr NU * Array size NU) + 1
 
 WHILE JobCtr NU  &lt;= OutsideCount
+
 	WHILE ResponsibilityCtr NU &lt;= ICap NU[JobCtr NU]
-		SET Work Responsibility TE[JobCtr NU, ResponsibilityCtr NU] TO Work Responsibility TE[ExpIndex NU]
+		SET Work Responsibility TE[JobCtr NU, ResponsibilityCtr NU] TO A2J Work Responsibility TE[ExpIndex NU]
 		INCREMENT ExpIndex NU
 		INCREMENT ResponsibilityCtr NU
 	END WHILE
+
 	INCREMENT JobCtr NU
 	SET ResponsibilityCtr NU TO 1
 	SET ExpIndex NU TO (JobCtr NU * Array size NU) +1
