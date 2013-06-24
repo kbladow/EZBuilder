@@ -120,7 +120,28 @@
 		<hd:trueFalse name="Job Seeker Include Email TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker Include Phone TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Job Seeker MSG Phone TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Skills AD TF" yesNoOnSameLine="true">
+			<hd:title>Attention to Detail</hd:title>
+		</hd:trueFalse>
+		<hd:trueFalse name="Skills FI TF" yesNoOnSameLine="true">
+			<hd:title>Follows instructions</hd:title>
+		</hd:trueFalse>
+		<hd:trueFalse name="Skills H TF" yesNoOnSameLine="true">
+			<hd:title>Hardworking</hd:title>
+		</hd:trueFalse>
+		<hd:trueFalse name="Skills O TF" yesNoOnSameLine="true">
+			<hd:title>Organized</hd:title>
+		</hd:trueFalse>
+		<hd:trueFalse name="Skills P TF" yesNoOnSameLine="true">
+			<hd:title>Punctual</hd:title>
+		</hd:trueFalse>
+		<hd:trueFalse name="Skills R TF" yesNoOnSameLine="true">
+			<hd:title>Reliable</hd:title>
+		</hd:trueFalse>
 		<hd:trueFalse name="Skills TF" yesNoOnSameLine="true"/>
+		<hd:trueFalse name="Skills TM TF" yesNoOnSameLine="true">
+			<hd:title>Time Management</hd:title>
+		</hd:trueFalse>
 		<hd:trueFalse name="Work Present TF" yesNoOnSameLine="true"/>
 		<hd:trueFalse name="Work TF" yesNoOnSameLine="true"/>
 		<hd:multipleChoice name="College End Month MC">
@@ -634,6 +655,16 @@
 			</hd:options>
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
+		<hd:multipleChoice name="GED Status MC">
+			<hd:options>
+				<hd:option name="Complete">
+					<hd:prompt>Complete</hd:prompt>
+				</hd:option>
+				<hd:option name="In-Progress">
+					<hd:prompt>In Progress</hd:prompt>
+				</hd:option>
+			</hd:options>
+		</hd:multipleChoice>
 		<hd:multipleChoice name="HS End Month MC">
 			<hd:options>
 				<hd:option name="1">
@@ -995,6 +1026,12 @@
 				</hd:option>
 				<hd:option name="FI">
 					<hd:prompt>Follow Instructions</hd:prompt>
+				</hd:option>
+				<hd:option name="H">
+					<hd:prompt>Hardworking</hd:prompt>
+				</hd:option>
+				<hd:option name="AD">
+					<hd:prompt>Attention to Detail</hd:prompt>
 				</hd:option>
 			</hd:options>
 			<hd:multipleSelection/>
@@ -1381,11 +1418,20 @@ END WHILE
 		<hd:computation name="GED Include CO" resultType="trueFalse">
 			<hd:script>ANSWERED(GED TF) AND GED TF</hd:script>
 		</hd:computation>
+		<hd:computation name="GED Include Complete In-Progress CO" resultType="text">
+			<hd:script>IF GED Status MC = &quot;Complete&quot;
+	&quot;GED obtained&quot; + GED Include Year State CO + &quot;.&quot;
+ELSE IF GED Status MC = &quot;In-Progress&quot;
+	&quot;GED expected to be obtained&quot; + GED Include Year State CO + &quot;.&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
 		<hd:computation name="GED Include Year State CO" resultType="text">
 			<hd:script>IF ANSWERED(GED Year TE) AND ANSWERED(GED State MC)
-	&quot; &quot; + GED Year TE + &quot; from &quot; + GED State MC
+	&quot; in &quot; + GED Year TE + &quot; from &quot; + GED State MC
 ELSE IF ANSWERED(GED Year TE)
-	&quot; &quot; + GED Year TE
+	&quot; in &quot; + GED Year TE
 ELSE IF ANSWERED (GED State MC)
 	&quot; from &quot; + GED State MC
 ELSE
@@ -1536,8 +1582,57 @@ ELSE
 	&quot;&quot;
 END IF</hd:script>
 		</hd:computation>
+		<hd:computation name="Skills Include AD CO" resultType="text">
+			<hd:script>IF ANSWERED(Skills AD TF) AND Skills AD TF
+	&quot;Pay attention to details&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
 		<hd:computation name="Skills Include CO" resultType="trueFalse">
 			<hd:script>ANSWERED(Skills TF) AND Skills TF</hd:script>
+		</hd:computation>
+		<hd:computation name="Skills Include FI CO" resultType="text">
+			<hd:script>IF ANSWERED(Skills FI TF) AND Skills FI TF
+	&quot;Follow instructions well&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Skills Include H CO" resultType="text">
+			<hd:script>IF ANSWERED(Skills H TF) AND Skills H TF
+	&quot;Hardworking&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Skills Include O CO" resultType="text">
+			<hd:script>IF ANSWERED(Skills O TF) AND Skills O TF
+	&quot;Organized&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Skills Include P CO" resultType="text">
+			<hd:script>IF ANSWERED(Skills P TF) AND Skills P TF
+	&quot;Punctual&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Skills Include R CO" resultType="text">
+			<hd:script>IF ANSWERED(Skills R TF) AND Skills R TF
+	&quot;Reliable&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
+		</hd:computation>
+		<hd:computation name="Skills Include TM CO" resultType="text">
+			<hd:script>IF ANSWERED(Skills TM TF) AND Skills TM TF
+	&quot;Manage time well&quot;
+ELSE
+	&quot;&quot;
+END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="Work Include CO" resultType="trueFalse">
 			<hd:script>ANSWERED(Work TF) AND Work TF</hd:script>
@@ -1614,6 +1709,7 @@ END IF</hd:script>
 		</hd:dialog>
 		<hd:dialog name="GED">
 			<hd:contents>
+				<hd:item name="GED Status MC"/>
 				<hd:item name="GED State MC"/>
 				<hd:item name="GED Year TE"/>
 			</hd:contents>
@@ -1686,7 +1782,13 @@ END IF</hd:script>
 		</hd:dialog>
 		<hd:dialog name="Skills Include">
 			<hd:contents>
-				<hd:item name="Job Seeker Skills MC"/>
+				<hd:item name="Skills AD TF"/>
+				<hd:item name="Skills FI TF"/>
+				<hd:item name="Skills H TF"/>
+				<hd:item name="Skills O TF"/>
+				<hd:item name="Skills P TF"/>
+				<hd:item name="Skills R TF"/>
+				<hd:item name="Skills TM TF"/>
 			</hd:contents>
 		</hd:dialog>
 		<hd:dialog name="Work">
@@ -1804,11 +1906,13 @@ END IF</hd:script>
 			<hd:choice></hd:choice>
 		</hd:multipleChoiceFormat>
 		<hd:multipleChoiceFormat name="Time Management/Reliable/Punctual/Organized/Follow">
-			<hd:choice>Time Management«.pm»</hd:choice>
+			<hd:choice>Manage time well«.pm»</hd:choice>
 			<hd:choice>Reliable«.pm»</hd:choice>
 			<hd:choice>Punctual«.pm»</hd:choice>
 			<hd:choice>Organized«.pm»</hd:choice>
-			<hd:choice>Follow Instructions«.pm»</hd:choice>
+			<hd:choice>Follow instructions well«.pm»</hd:choice>
+			<hd:choice>Hardworking«.pm»</hd:choice>
+			<hd:choice>Pay attention to detail«.pm»</hd:choice>
 		</hd:multipleChoiceFormat>
 		<hd:multipleChoiceFormat name="he/she">
 			<hd:choice>he</hd:choice>
