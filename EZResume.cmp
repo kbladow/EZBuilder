@@ -17,13 +17,44 @@
 		<hd:preference name="MAX_STACK_DEPTH">100</hd:preference>
 		<hd:preference name="MOVE TO TYPE HERE">False</hd:preference>
 		<hd:preference name="NO ANSWER FILE">False</hd:preference>
+		<hd:preference name="ONLINE COMPATIBILITY MODE">True</hd:preference>
 		<hd:preference name="POINTED TO CMP"></hd:preference>
 		<hd:preference name="PROCESS_DLGS_WHILE_ASM_DOCS">False</hd:preference>
 		<hd:preference name="REGISTER"></hd:preference>
+		<hd:preference name="REMOVE_ANNOTATIONS">False</hd:preference>
+		<hd:preference name="REMOVE_AUTHOR">False</hd:preference>
+		<hd:preference name="REMOVE_CATEGORY">False</hd:preference>
+		<hd:preference name="REMOVE_CHANGE_TRACKING">False</hd:preference>
+		<hd:preference name="REMOVE_COMMENTS">False</hd:preference>
+		<hd:preference name="REMOVE_COMPANY">False</hd:preference>
+		<hd:preference name="REMOVE_CUSTOM_PROPERTIES">False</hd:preference>
+		<hd:preference name="REMOVE_EDITABLE_TEXT_BOOKMARKS">True</hd:preference>
+		<hd:preference name="REMOVE_HD_ANSWER_MARKS">True</hd:preference>
+		<hd:preference name="REMOVE_HYPERLINK_BASE">False</hd:preference>
+		<hd:preference name="REMOVE_KEYWORDS">False</hd:preference>
+		<hd:preference name="REMOVE_MANAGER">False</hd:preference>
+		<hd:preference name="REMOVE_METAFILES">True</hd:preference>
+		<hd:preference name="REMOVE_PROPERTY_CODES">True</hd:preference>
+		<hd:preference name="REMOVE_REVISION_IDS">True</hd:preference>
+		<hd:preference name="REMOVE_STATISTICS">False</hd:preference>
+		<hd:preference name="REMOVE_SUBJECT">False</hd:preference>
+		<hd:preference name="REMOVE_TITLE">False</hd:preference>
+		<hd:preference name="REMOVE_TRACKED_CHANGES">False</hd:preference>
+		<hd:preference name="SERVER_CAN_CHANGE_INSTANT_UPDATE">True</hd:preference>
+		<hd:preference name="SERVER_CAN_CHANGE_INTERVIEW_OUTLINE">True</hd:preference>
+		<hd:preference name="SERVER_CAN_CHANGE_RESOURCE_PANE">True</hd:preference>
+		<hd:preference name="SERVER_CAN_CHANGE_SINGLE_PAGE_INTERVIEW">False</hd:preference>
+		<hd:preference name="SERVER_INITIAL_INSTANT_UPDATE">True</hd:preference>
+		<hd:preference name="SERVER_INITIAL_INTERVIEW_OUTLINE">True</hd:preference>
+		<hd:preference name="SERVER_INITIAL_RESOURCE_PANE">False</hd:preference>
+		<hd:preference name="SERVER_SINGLE_PAGE_INTERVIEW">False</hd:preference>
 		<hd:preference name="TEMPLATE DESCRIPTION"></hd:preference>
 		<hd:preference name="TEMPLATE TITLE">EZ Resume</hd:preference>
 		<hd:preference name="UNANSWERED VAR PLACEHOLDER"></hd:preference>
 		<hd:preference name="UPDATE_TOC">False</hd:preference>
+		<hd:preference name="UPLOAD ALWAYS">False</hd:preference>
+		<hd:preference name="UPLOAD URL DESCRIPTION"></hd:preference>
+		<hd:preference name="UPLOAD URL"></hd:preference>
 		<hd:preference name="USE DEFAULT DLG TITLE ALWAYS">False</hd:preference>
 		<hd:preference name="USE NAMES">False</hd:preference>
 		<hd:preference name="USE_INTERVIEW_COMPUTATION">True</hd:preference>
@@ -1286,7 +1317,7 @@
 			<hd:singleSelection style="dropDownList"/>
 		</hd:multipleChoice>
 		<hd:computation name="Certifications Include CO" resultType="trueFalse">
-			<hd:script>ANSWERED(Certifications TF) AND Certifications TF</hd:script>
+			<hd:script>ANSWERED(Certifications TF) AND Certifications TF AND ANSWERED(Certifications TE)</hd:script>
 		</hd:computation>
 		<hd:computation name="College Include Attended CO" resultType="text">
 			<hd:script>IF (ANSWERED(College End Year TE) OR  ANSWERED(College Start Year TE)) AND (College Status MC = &quot;Attended&quot;)
@@ -1303,7 +1334,7 @@ ELSE
 END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="College Include CO" resultType="trueFalse">
-			<hd:script>ANSWERED(College TF) AND College TF</hd:script>
+			<hd:script>ANSWERED(College TF) AND College TF AND (ANSWERED(College Name TE) OR College Include Degree Area of Study CO != &quot;&quot; OR College Include Attended CO != &quot;&quot; OR College Include Start Month Year CO != &quot;&quot; OR College Include End Month Year CO != &quot;&quot; OR College Include Expected Grad CO != &quot;&quot; OR College Include Grad CO != &quot;&quot;)</hd:script>
 		</hd:computation>
 		<hd:computation name="College Include City State CO" resultType="text">
 			<hd:script>IF ANSWERED(College State MC) AND ANSWERED (College City TE)
@@ -1416,12 +1447,12 @@ END WHILE
 &quot;&quot;</hd:script>
 		</hd:computation>
 		<hd:computation name="GED Include CO" resultType="trueFalse">
-			<hd:script>ANSWERED(GED TF) AND GED TF</hd:script>
+			<hd:script>ANSWERED(GED TF) AND GED TF AND GED Include Complete In-Progress CO != &quot;&quot;</hd:script>
 		</hd:computation>
 		<hd:computation name="GED Include Complete In-Progress CO" resultType="text">
-			<hd:script>IF GED Status MC = &quot;Complete&quot;
+			<hd:script>IF ANSWERED(GED Status MC) AND GED Status MC = &quot;Complete&quot;
 	&quot;GED obtained&quot; + GED Include Year State CO + &quot;.&quot;
-ELSE IF GED Status MC = &quot;In-Progress&quot;
+ELSE IF ANSWERED(GED Status MC) AND GED Status MC = &quot;In-Progress&quot;
 	&quot;GED expected to be obtained&quot; + GED Include Year State CO + &quot;.&quot;
 ELSE
 	&quot;&quot;
@@ -1446,7 +1477,7 @@ ELSE
 END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="HS Include CO" resultType="trueFalse">
-			<hd:script>ANSWERED(HS TF) AND HS TF</hd:script>
+			<hd:script>ANSWERED(HS TF) AND HS TF AND ( ANSWERED(HS Name TE) OR HS Include City State CO != &quot;&quot; OR HS Include Years CO != &quot;&quot;)</hd:script>
 		</hd:computation>
 		<hd:computation name="HS Include City State CO" resultType="text">
 			<hd:script>IF ANSWERED(HS State MC) AND ANSWERED (HS City TE)
@@ -1590,7 +1621,7 @@ ELSE
 END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="Skills Include CO" resultType="trueFalse">
-			<hd:script>ANSWERED(Skills TF) AND Skills TF</hd:script>
+			<hd:script>ANSWERED(Skills TF) AND Skills TF AND ( Skills Include AD CO != &quot;&quot; OR Skills Include TM CO != &quot;&quot; OR Skills Include FI CO != &quot;&quot; OR Skills Include R CO != &quot;&quot; OR Skills Include P CO != &quot;&quot; OR Skills Include O CO != &quot;&quot; OR Skills Include H CO != &quot;&quot; OR ANSWERED(Job Seeker Other Skills TE))</hd:script>
 		</hd:computation>
 		<hd:computation name="Skills Include FI CO" resultType="text">
 			<hd:script>IF ANSWERED(Skills FI TF) AND Skills FI TF
@@ -1635,7 +1666,7 @@ ELSE
 END IF</hd:script>
 		</hd:computation>
 		<hd:computation name="Work Include CO" resultType="trueFalse">
-			<hd:script>ANSWERED(Work TF) AND Work TF</hd:script>
+			<hd:script>ANSWERED(Work TF) AND Work TF AND (ANSWERED(Work Position TE) OR ANSWERED(Work Company TE) OR Work Include Start Month Year CO != &quot;&quot; OR Work Include End Month Year CO != &quot;&quot;) </hd:script>
 		</hd:computation>
 		<hd:computation name="Work Include Dates Dash CO" resultType="text">
 			<hd:script>IF ((ANSWERED(Work Present TF) AND Work Present TF) OR ANSWERED(Work End Year TE)) AND ANSWERED(Work Start Year TE)

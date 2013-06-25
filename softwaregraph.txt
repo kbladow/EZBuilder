@@ -1,0 +1,64 @@
+1. Introduction
+2. Get Name
+3. Include Address?
+    TRUE 1. Get Address
+4. Include Email?
+    TRUE 1. Get Email
+5. Include Phone?
+    TRUE 1. Get Phone
+    FALSE 1. Include Msg Phone?
+        TRUE 1. Get Msg Phone
+
+6. Include Work?
+    TRUE 1. Get Position
+    TRUE 2. Get Company
+    TRUE 3. Get Job Start
+    TRUE 4. Include Present?
+      FALSE 1. Get Job End
+    TRUE 5. Get Responsibilities (Limit 5. More than 5->Error)
+    TRUE 6. Include More Jobs?
+        TRUE 1. GOTO Get Position
+
+7. Include College?
+    TRUE 1. Get College Name
+    TRUE 2. Get College Location
+    TRUE 3. Get College Status
+        Attending 1. Get College Exp Grad Date
+        Attending 2. Get College Area of Study
+        Graduated 1. Get College Grad Date
+        Graduated 2. Get College Degree
+        Attended 1. Get College Start
+        Attended 2. Get College End
+    TRUE 4. Include More Colleges?
+      TRUE 1. GOTO Get College Name
+      
+8. Include High School?
+    TRUE 1. Get High School Name
+    TRUE 2. Get High School Location
+    TRUE 3. Get High School Status
+        Attending 1. Get High School Exp Grad Date
+        Graduated 1. Get High School Grad Date
+        Attended 1. Get High School Start
+        Attended 2. Get High School End
+        Attended 3. Include GED?
+          TRUE 1. Get GED Status
+            Completed 1. Get GED Year
+            Completed 2. Get GED State
+            In-Progress 1. Get GED Exp Year
+            In-Progress 2. Get GED Exp State
+
+9. Include Certifications?
+    TRUE 1. Get Certifications
+      
+10. Include Skills?
+    TRUE 1. Suggest Skills?
+      TRUE 1. Do you manage your time well?
+      TRUE 2. Can you follow instructions?
+      TRUE 3. Are you organized?
+      TRUE 4. Are you punctual?
+      TRUE 5. Are you reliable?
+      TRUE 6. Are you hardworking?
+      TRUE 7. Do you pay attention to detail?
+    TRUE 2. Add Your Own Skills?
+      TRUE 1. Get Skills
+    
